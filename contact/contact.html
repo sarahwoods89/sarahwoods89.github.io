@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../sarahWoodsStyle/style.css"/>
+    <link rel="icon" href="../images/logo/sWFavicon.png" type="image/png">
+    <script>
+        // Email validation with regex
+        function validateEmail() {
+            const email = document.getElementById("email").value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return false; // Prevents form submission
+            }
+            return true; // Allows form submission
+        }
+
+        // Update placeholder based on query selection
+        function updatePlaceholder() {
+            const query = document.getElementById("Query").value;
+            const subject = document.getElementById("subject");
+
+            if (query === "New Order") {
+                subject.placeholder = "Please type as much detail as possible about your commission.";
+            } else if (query === "Web3 work") {
+                subject.placeholder = "I am open to collaborations in web3. Let me know what you're thinking...";
+            } else if (query === "Print purchase") {
+                subject.placeholder = "Thanks for your interest. Let me know which print you’re inquiring about.";
+            } else if (query === "Clay sculptures") {
+                subject.placeholder = "Thanks for your interest in my sculptures.";
+            } else {
+                subject.placeholder = "Write something...";
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header">
+        <div id="header-logo">
+            <a href="../index.html"><img src="../images/logo/sWLogoVectorWithName.png" alt="Logo" class="logo"></a>
+        </div>
+        <div id="header-nav">
+            <div class="link"><a href="../index.html">Home</a></div>
+            <div class="link"><a href="../sarahWords/sarahWords.html">Sarah Words</a></div>
+            <div class="link"><a href="../about/about.html">About</a></div>
+            <div class="link"><a href="../contact/contact.html" class="active">Contact</a></div>
+        </div>
+    </div>
+	<div class="introText">
+	<h4>Get in Touch</h4>
+	</div>
+    <!-- Contact Form -->
+    <div id="main">
+        <section class="contact-container">
+            <form action="action_page.php" onsubmit="return validateEmail()">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your first name.." required>
+
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email.." required>
+
+                <label for="Query">Query</label>
+                <select id="Query" name="query" onchange="updatePlaceholder()" required>
+                    <option value="" disabled selected>Please choose your query</option>
+                    <option value="New Order">Commission a painting</option>
+                    <option value="Web3 work">Web3 work</option>
+                    <option value="Print purchase">Print purchase</option>
+                    <option value="Clay sculptures">Clay sculptures</option>
+                </select>
+
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write your thoughts here.." style="height:150px" required></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p>&copy; 2024 Sarah Woods Art. All Rights Reserved.</p>
+        <p>
+            <a href="https://instagram.com/sarahwoods_art" target="_blank">
+                <img src="../images/socials/instagram.png" alt="Instagram Logo">
+            </a>
+            <a href="https://linktr.ee/sarahwoodsartist" target="_blank">
+                <img src="../images/socials/lensLogo.png" alt="Orb Logo">
+            </a>
+            <a href="https://thehug.xyz/artists/sarah_woods" target="_blank">
+                <img src="../images/socials/hugLogo.png" alt="Hug Logo">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

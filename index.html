@@ -3,31 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artist's Page</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <title>Sarah Woods</title>
+    <link rel="stylesheet" href="sarahWoodsStyle/style.css"> <!-- Link to your CSS file -->
+    <link rel="icon" href="images/logo/sWFavicon.png" type="image/png">
+
+    <!-- Include Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+
+    <!-- Include jQuery and Slick JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
 </head>
 <body>
     <!-- Header Section -->
-    <header id="header">
-        <div class="logo">
-            <h1>Sarah Woods</h1> <!-- You can replace this with a logo image -->
+    <div id="header">
+        <div id="header-logo">
+            <a href="index.html"><img src="images/logo/sWLogoVectorWithName.png" alt="Logo" class="logo"></a>
         </div>
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="nfts.html">NFTs</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Main Container -->
+        <div id="header-nav">
+            <div class="link"><a href="index.html" class="active">Home</a></div>
+            <div class="link"><a href="sarahWords/sarahWords.html">Sarah Words</a></div>
+            <div class="link"><a href="about/about.html">About</a></div>
+            <div class="link"><a href="contact/contact.html">Contact</a></div>
+        </div>
+    </div>
+	<div class="introText">
+	<div class="indexIntroText"><h6>Painter. Writer. Web3</h6>
+	</div>
+    <!-- Main Content -->
     <main id="main">
-        <!-- This section will change for each page -->
         <section class="content">
-            <h2>Painter. Writer. Web3</h2>
-            <p></p>
+			<br> 
+			</br>
+            <!-- Slick Carousel -->
+            <div class="carousel">
+                <div><img src="images/pictures/neurogenesisJump.png" alt="Neurogenesis abstract painting"></div>
+                <div><img src="images/pictures/commonGroundsPainting.png" alt="Common Grounds Painting"></div>
+                <div><img src="images/pictures/slothPainting.png" alt="Sloth painting"></div>
+                <div><img src="images/pictures/commonGroundsJump.png" alt="jumping in front of painting"></div>
+                <div><img src="images/pictures/spinCity.png" alt="spin City painting"></div>
+            </div>
         </section>
     </main>
 
@@ -35,12 +51,39 @@
     <footer id="footer">
         <p>&copy; 2024 Sarah Woods Art. All Rights Reserved.</p>
         <p>
-            <a href="https://instagram.com/sarahwoods_art" target="_blank">Instagram</a> | 
-            <a href="https://orb.com" target="_blank">Orb</a> | 
-            <a href="https://thehug.xyz/sarahwords" target="_blank">The Hug</a>
+            <!-- Instagram Icon -->
+            <a href="https://instagram.com/sarahwoods_art" target="_blank">
+                <img src="../images/socials/instagram.png" alt="Instagram Logo">
+            </a>
+            <!-- Linktree Icon -->
+            <a href="https://linktr.ee/sarahwoodsartist" target="_blank">
+                <img src="../images/socials/lensLogo.png" alt="Orb Logo">
+            </a>
+            <!-- The Hug Icon -->
+            <a href="https://thehug.xyz/artists/sarah_woods" target="_blank">
+                <img src="../images/socials/hugLogo.png" alt="Hug Logo">
+            </a>
         </p>
     </footer>
+
+    <!-- Initialize Slick Carousel -->
+    <script>
+        $(document).ready(function(){
+    $('.carousel').slick({
+        infinite: true,          // Enables infinite looping
+        slidesToShow: 3,         // Number of visible slides
+        slidesToScroll: 1,       // Scroll one slide at a time
+        autoplay: true,          // Enable autoplay
+        autoplaySpeed: 0,        // Continuous motion
+        arrows: false,           // Disable navigation arrows
+        dots: false,             // Disable dots
+        speed: 6000,             // Duration for one full loop (adjust as needed)
+        cssEase: 'linear',       // Smooth, continuous motion
+        variableWidth: true,     // Allow dynamic slide widths
+        centerMode: true         // Center the active slide
+    });
+});
+
+    </script>
 </body>
 </html>
-
-
