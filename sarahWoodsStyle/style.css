@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-
 /* Body and Background Colors */
 body {
     font-family: Arial, sans-serif;
@@ -14,69 +13,105 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin: 0;
 }
 
 html {
     overflow-y: scroll;
 }
-* {
-    box-sizing: border-box;
+
+
+
+#header {
+    flex-shrink: 0; /* Avoiding my header from moving all over teh place, I hope. Prevents it from shrinking with flex layouts */
 }
 
 
 /* Header container */
 #header {
+	height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center; /* Center items vertically */
     padding: 20px;
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
     width: 100%;
-    border: none; /* Remove outline/border */
+    border: none;
+    font-family:  sans-serif; /* Set font family for the entire header */
+    font-size: 12px; /* Standard font size for the header */
+    line-height: 1.5; /* Ensure consistent line height */
+	position: relative;
 }
 
-/* Logo styling */
+
+
+/* Header logo */
 #header-logo img {
-    max-width: 250px; /* Increase logo size */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 250px;
+    height: auto;
+	max-height: 100px;
 }
 
 /* Navigation container */
 #header-nav {
     display: flex;
-    gap: 25px; /* Space between links */
-}
-
-/* Navigation links */
-#header-nav .link a {
-    text-decoration: none; /* Remove underline */
-    color: black; /* Dark text color */
-    font-size: 0.9em; /* Increase font size */
-    font-weight: bold; /* Set bold as the default to avoid jumping */
-    padding: 5px 10px; /* Add padding for clickability */
-    transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Smooth transitions */
-}
-
-/* Hover effect */
-#header-nav .link a:hover {
-    color: #2102d1; /* Highlight color on hover */
-}
-
-/* Active link styling */
-#header-nav .link a.active {
-    color: black; /* Keep color consistent for active */
-    text-decoration: underline; /* Underline active link */
-}
-
-#header, #header-logo, #header-nav {
-    font-family: Didot, sans-serif;
-    font-size: 16px;
+    gap: 25px;
+    font-family: sans-serif;
+    font-size: 12px; /* Explicit font-size */
     line-height: 1.5;
 }
 
+#header-nav .link a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    font-size: inherit; /* Ensure font-size matches parent */
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+#header-nav .link a.active {
+    color: black;
+    text-decoration: underline;
+}
+
+#header-nav .link a:hover {
+    color: #2102d1;
+}
+
+/* Force header font styles to override other styles */
+#header, #header-nav, #header-nav .link a {
+    font-family: sans-serif;
+    font-size: 12px !important; /* Force font size */
+    line-height: 1.5 !important; /* Force line height */
+}
+
+#main {
+    display: flex; /* Use flexbox for alignment */
+	background-color: #ffffff;
+    justify-content: center; /* Center the content horizontally */
+	max-width: 1200px;
+    align-items: center; /* Center the content vertically */
+    flex-direction: column; /* Stack content vertically */
+    min-height: 100vh; /* Full viewport height */
+    padding: 20px;
+	text-align: center;
+	position: center;
+}
+
+
+
+#content { 
+	display: flex 1;
+    max-width: 1200px; /* Limits width */
+    width: 100%; /* Full width for smaller screens */
+    margin: 0 auto; /* Centers content horizontally */
+    padding: 10px; 
+    line-height: 2.0; 
+    text-align: center; 
+}
 
 .carousel img {
-    height: 250px; /* Adjust the height to fit the screen */
+    height: 350px; /* Adjust the height to fit the screen */
     object-fit: cover; /* Ensure images don't stretch */
     margin: 0 auto; /* Center the images */
 }
@@ -112,29 +147,6 @@ html {
 #footer a img:hover {
     transform: scale(1.2);
 }
-/* Introduction above main text */
-.introText {
-    text-align: center; /* Center-align text */
-    margin: 0 auto 20px auto; /* Center the div and add spacing below */
-    max-width: 800px; /* Restrict width for readability */
-    padding: 20px; /* Add padding around the text */
-	width: 100%;
-}
-
-.indexIntroText h6 {
-	font-family: Didot;
-	font-size: 1.8em;
-	color: #333;
-	margin-bottom: 1px;
-}
-
-/* Heading Styling */
-.introText h4 {
-    font-family: Didot;
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 2px; /* Add spacing below the heading */
-}
 
 /* Paragraph Styling */
 .introText p {
@@ -143,6 +155,7 @@ html {
     color: #333;
     line-height: 1.6; /* Add space between lines */
     margin: 0 auto;
+	position: center;
 }
 
 /* Image Container Styling */
@@ -166,7 +179,6 @@ html {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 10px; /* Add rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
     transition: transform 0.3s ease-in-out; /* Smooth hover effect */
 }
@@ -175,29 +187,6 @@ html {
     transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
-
-
-/* Main Content */
-#main {
-    flex: 1;
-    padding: 30px;
-    max-width: 1200px; /* Widened main div */
-    margin: 20px auto;
-    background-color: #ffffff;
-    border-radius: 10px;
-    position: relative;
-    text-align: center; /* Centers text inside the main div */
-	justify-content: center;
-}
-/*
-#main {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    flex-direction: column; 
-    min-height: 100vh; 
-    padding: 20px; 
-}*/
 
 
 /* About Section Styling */
@@ -227,7 +216,7 @@ html {
     background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border-radius: 10px;
+    border-radius: 2px;
 }
 
 .text-box h2 {
@@ -257,139 +246,12 @@ html {
 }
 
 
-.contact-container {
-    max-width: 800px; /* Restrict maximum width for readability */
-    width: 100%; /* Full width responsiveness */
-    margin: 0 auto; /* Horizontally center the container */
-    padding: 30px; /* Add padding inside the container */
-    background-color: #d5e1e6; /* Background color */
-    border-radius: 5px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
-    text-align: left; /* Align form labels and inputs to the left */
-}
-
-#main {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    flex-direction: column; /* Stack content vertically */
-    min-height: 100vh; /* Full viewport height */
-    padding: 20px;
-}
-
-form {
-    width: 100%; /* Ensure the form takes up the full width of the container */
-}
-
-form input[type="text"],
-form input[type="email"],
-form select,
-form textarea {
-    width: 100%; /* Full width for inputs */
-    padding: 12px; /* Add padding */
-    margin-top: 6px; /* Space above */
-    margin-bottom: 16px; /* Space below */
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 4px; /* Rounded corners */
-    background-color: #d5e1e6; /* Light background */
-    box-sizing: border-box; /* Include padding and borders in width */
-}
-
-form input[type="submit"] {
-    background-color: #800026; /* Grape color */
-    color: white; /* White text */
-    padding: 12px 20px; /* Padding for the button */
-    border: none; /* Remove border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-weight: bold; /* Bold text */
-    text-align: center; /* Center the text */
-}
-
-form input[type="submit"]:hover {
-    background-color: #45a049; /* Light green on hover */
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .contact-container {
         max-width: 90%; /* Make it more responsive on smaller screens */
     }
-}
 
-
-
-
-
-form {
-    text-align: center; /* Align text in the form to the center */
-}
-
-
-
-/* Placeholder styling - where customers enter all their details*/
-input::placeholder,
-textarea::placeholder { 
-    color: #333; /* Darker placeholder color */
-    opacity: 1; /* Full opacity */
-}
-
-/* Label styling within form */
-.contact-container label { 
-    color: #333; /* Darker label color */
-    font-weight: bold; /* Makes labels bold */
-    font-size: 1em; /* Adjusts label font size */
-}
-
-/* Centered text */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-form input[type="text"],
-form input[type="email"],
-form select,
-form textarea {
-    display: block;
-    width: 100%;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: #d5e1e6; /* Your background color */
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 1em;
-}
-
-form input[type="submit"] {
-    width: auto; /* Default width for the button */
-    background-color: #800026; /* Grape color */
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-form input[type="submit"]:hover {
-    background-color: #45a049; /* Lighter green hover */
-}
-
-
-
-
-/* Responsive Design */
 @media (max-width: 768px) {
     .form-row {
         flex-direction: column; /* Stack inputs vertically */

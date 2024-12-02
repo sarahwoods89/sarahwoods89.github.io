@@ -4,51 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sarah Words</title>
-    <link rel="stylesheet" href="../sarahWoodsStyle/style.css"> <!-- Link to your CSS file -->
-    <link rel="icon" href="../images/logo/sWFavicon.png" type="image/SW logo"> <!-- Favicon logo, made on Canva -->  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../sarahWoodsStyle/style.css"> <!-- Your custom CSS -->
+    <link rel="icon" href="../images/logo/sWFavicon.png" type="image/SW logo">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
+
 <body>
     <div id="header">
         <div id="header-logo">
             <a href="../index.html"><img src="../images/logo/sWLogoVectorWithName.png" alt="Logo" class="logo"></a>
         </div>
         <div id="header-nav">
-            <div class="link"><a href="../index.html">Home</a></div>
-            <div class="link"><a href="../sarahWords/sarahWords.html" class="active">Sarah Words</a></div>
-            <div class="link"><a href="../about/about.html">About</a></div>
-            <div class="link"><a href="../contact/contact.html">Contact</a></div>
+            <div class="link"><a href="../index.html">HOME</a></div>
+            <div class="link"><a href="../sarahWords/sarahWords.html" class="active">SARAH WOODS</a></div>
+            <div class="link"><a href="../about/about.html">ABOUT</a></div>
+            <div class="link"><a href="../subscribe/subscribe.html">SUBSCRIBE</a></div>
         </div>
     </div>
+	<div id="main">
 	<div class="introText">
         <p>The Sarah Words collection explores the intersection of creativity and technology, bringing ideas to life with vibrant visuals and thought-provoking concepts.</p>
     </div>
-	<div id="main">
-    <!-- Simple Paragraph Section -->
-        <div class="imageContainer"> <!-- Container for images -->
-            <div class="row">
-                <div class="col-sm-4">
-                    <img src="../images/words/comparison.png" alt="Comparison" class="grid-image">
-                </div>
-                <div class="col-sm-4">
-                    <img src="../images/words/fallibleAf.png" alt="Fallible AF" class="grid-image">
-                </div>
-                <div class="col-sm-4">
-                    <img src="../images/words/fear.png" alt="Fear" class="grid-image">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <img src="../images/words/bigJuicyBrains.png" alt="In A World" class="grid-image">
-                </div>
-                <div class="col-sm-4">
-                    <img src="../images/words/optimisticForOthers.png" alt="Optimistic for Others" class="grid-image">
-                </div>
-                <div class="col-sm-4">
-                    <img src="../images/words/yourPeople.png" alt="Your People" class="grid-image">
-                </div>
-            </div>
+	<div class="container my-4"> <!-- Add Bootstrap container -->
+    <div class="row g-4"> <!-- Bootstrap row with gutters -->
+        <div class="col-sm-4">
+            <img src="../images/words/comparison.png" alt="Comparison" class="img-fluid rounded">
+        </div>
+        <div class="col-sm-4">
+            <img src="../images/words/fallibleAf.png" alt="Fallible AF" class="img-fluid rounded">
+        </div>
+        <div class="col-sm-4">
+            <img src="../images/words/fear.png" alt="Fear" class="img-fluid rounded">
         </div>
     </div>
+    <div class="row g-4">
+        <div class="col-sm-4">
+            <img src="../images/words/bigJuicyBrains.png" alt="Big Juicy Brains" class="img-fluid rounded">
+        </div>
+        <div class="col-sm-4">
+            <img src="../images/words/optimisticForOthers.png" alt="Optimistic for Others" class="img-fluid rounded">
+        </div>
+        <div class="col-sm-4">
+            <img src="../images/words/yourPeople.png" alt="Your People" class="img-fluid rounded">
+        </div>
+    </div>
+</div>
+</div>
+
     <!-- Footer Section -->
     <footer id="footer">
         <p>&copy; 2024 Sarah Woods Art. All Rights Reserved.</p>
