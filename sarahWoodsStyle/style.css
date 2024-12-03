@@ -13,17 +13,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin: 0;
+    margin: 0 auto; /* Center horizontally */
+	text-align: center;
 }
 
 html {
     overflow-y: scroll;
-}
-
-
-
-#header {
-    flex-shrink: 0; /* Avoiding my header from moving all over teh place, I hope. Prevents it from shrinking with flex layouts */
 }
 
 
@@ -41,6 +36,8 @@ html {
     font-size: 12px; /* Standard font size for the header */
     line-height: 1.5; /* Ensure consistent line height */
 	position: relative;
+	z-index: 1000;
+    flex-shrink: 0; /* Avoiding my header from moving all over teh place, I hope. Prevents it from shrinking with flex layouts */
 }
 
 
@@ -56,7 +53,7 @@ html {
 #header-nav {
     display: flex;
     gap: 25px;
-    font-family: sans-serif;
+    font-family: futura;
     font-size: 12px; /* Explicit font-size */
     line-height: 1.5;
 }
@@ -78,12 +75,23 @@ html {
     color: #2102d1;
 }
 
-/* Force header font styles to override other styles */
-#header, #header-nav, #header-nav .link a {
-    font-family: sans-serif;
-    font-size: 12px !important; /* Force font size */
-    line-height: 1.5 !important; /* Force line height */
+/* having trouble with header moving. Trying to force header font styles to override other styles */
+#header, #header-nav, #header-nav .nav-item .nav-link {
+    font-family: sans-serif !important; /* Force font family */
+    font-size: 12px !important;        /* Force font size */
+    color: black !important;          /* Force text color */
+	margin: 0 !important;
+    padding: 20px !important;
 }
+
+.nav-item .nav-link {
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: black;
+}
+
+
 
 #main {
     display: flex; /* Use flexbox for alignment */
@@ -95,7 +103,7 @@ html {
     min-height: 100vh; /* Full viewport height */
     padding: 20px;
 	text-align: center;
-	position: center;
+	margin: 0 auto; /* Center horizontally */
 }
 
 
@@ -108,12 +116,29 @@ html {
     padding: 10px; 
     line-height: 2.0; 
     text-align: center; 
+	margin: 0 auto; /* Center horizontally */
 }
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 
 .carousel img {
     height: 350px; /* Adjust the height to fit the screen */
     object-fit: cover; /* Ensure images don't stretch */
     margin: 0 auto; /* Center the images */
+	z-index: 0;
 }
 
 
@@ -151,11 +176,19 @@ html {
 /* Paragraph Styling */
 .introText p {
     font-family: Didot;
-    font-size: 1.2em;
-    color: #333;
+    font-size: 1.4em;
+    color: #080000;
     line-height: 1.6; /* Add space between lines */
     margin: 0 auto;
-	position: center;
+	text-align: center;
+}
+.introTextSwords p {
+    font-family: Didot;
+    font-size: 1.1em;
+    color: #080000;
+    line-height: 1.6; /* Add space between lines */
+    margin: 0 auto;
+	text-align: center;
 }
 
 /* Image Container Styling */
@@ -227,10 +260,11 @@ html {
 }
 
 .text-box p {
-    font-family: Arial, sans-serif;
+    font-family: Didot;
     font-size: 1.2em;
     color: #555;
     line-height: 1.6;
+	position: center;
 }
 
 .image-box {
@@ -244,6 +278,44 @@ html {
     border-radius: 10px; /* Rounded edges */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
+
+#subscribe-form label {
+    font-family: Arial, sans-serif; /* Specific to the form */
+    font-size: 14px;
+    color: #333;
+}
+
+#subscribe-form input {
+    font-family: Arial, sans-serif; /* Specific to the form */
+}
+
+.container.my-4 {
+    margin: 0 auto; /* Center the container */
+    text-align: center; /* Align text */
+}
+
+
+.subscribe-container {
+    background-image: url('../images/pictures/landscape.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensure the background covers the container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    padding: 110px; /* Add padding for content spacing */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow */
+	margin: 0 auto; /* Center horizontally */
+}
+
+#subscribe-form {
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.subscribe-container h1, .subscribe-container p {
+    color: #ffffff; /* White text color */
+}
+
 
 
 /* Responsive Design */
@@ -283,13 +355,13 @@ html {
 
     #content h4 {
         font-size: 1em;
-		position: centre;
+		position: center;
 		font-family: Arial;
     }
 	
 	#content p {
 		font-size: 0.8em;
-		position: centre;
+		position: center;
 		font-family: Didot, serif;
 	}
 
