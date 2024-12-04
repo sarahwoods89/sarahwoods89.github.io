@@ -41,6 +41,33 @@ html {
     flex-shrink: 0; /* Avoiding my header from moving all over teh place, I hope. Prevents it from shrinking with flex layouts */
 }
 
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+#header-logo img {
+    max-width: 200px;
+}
+
+#header-nav {
+    display: flex;
+    gap: 20px;
+}
+
+#header-nav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+#header-nav a.active {
+    text-decoration: underline;
+}
+
 
 
 /* Header logo */
@@ -196,7 +223,7 @@ html {
     color: #555;
     line-height: 1.6; /* Add space between lines */
     margin: 0 auto;
-	text-align: center;
+    text-align: justify;
 	margin-top: 10px;
 }
 
@@ -206,32 +233,72 @@ html {
     color: #333;
     line-height: 1.4; /* Add space between lines */
     margin: 20px auto; /* Center horizontally and add vertical margin */
-    padding: 0 20px; /* Add padding to bring it in on both sides */
-    max-width: 800px; /* Restrict the width */
-    text-align: center; /* Center-align text */
+    padding: 30px; /* Add padding to bring it in on both sides */
+    width: 400px; /* Restrict the width */
+    text-align: justify;
 }
 
 
-
-/* Row Styling */
-.row {
+.imageContainer { 
+    max-width: 1200px; /* Limits container width */
+    margin: 0 auto; /* Centers container */
+    padding: 20px; /* Adds inner spacing */
+    background-color: #ffffff; /* Optional: Gray background */
+    border-radius: 8px; /* Rounds corners */
     display: flex;
-    justify-content: center; /* Center-align rows */
-    margin-bottom: 20px; /* Add spacing below each row */
+    flex-wrap: wrap; /* Allows wrapping to new rows */
+    justify-content: center; /* Centers images horizontally */
+    gap: 20px; /* Space between images */
 }
 
-
-.grid-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+.row { 
+    display: flex; /* Flex layout for columns */
+    flex-wrap: wrap; /* Wraps columns onto new lines */
+    justify-content: center; /* Centers columns */
+    width: 100%; /* Full width */
 }
 
-.grid-image:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
+.column { 
+    flex: 1 1 calc(33.33% - 20px); /* Each column takes up ~33% of row, minus gap */
+    box-sizing: border-box; /* Includes padding in width */
+    max-width: 300px; /* Optional: Prevents columns from being too wide */
 }
+
+.column img { 
+    width: 100%; /* Fills column width */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 4px; /* Rounds corners */
+}
+
+.imgTextContainer { 
+    position: relative; /* To ensure text overlays the image */
+    display: block;
+    width: 100%; /* Take up the full column width */
+	padding: 5px;
+}
+
+.imgButton {
+    display: inline-block; /* Make it inline and block for padding */
+    padding: 8px 16px; /* Adjust padding as needed */
+    margin-top: 10px; /* Add spacing above the button */
+    font-family: Arial, sans-serif; /* Match your website's font */
+    font-size: 14px; /* Adjust text size */
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Button text color */
+    border: 2px solid #333; /* Border color and thickness */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center-align text */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    background-color: transparent; /* Transparent background */
+}
+
+.imgButton:hover {
+    background-color: #333; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+    border-color: #333; /* Ensure border matches background */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
 
 
 
@@ -278,6 +345,7 @@ html {
     font-size: 1.2em;
     color: #333;
     line-height: 1.6;
+	text-align: justify;
 }
 
 .image-box {
@@ -302,10 +370,6 @@ html {
     font-family: Arial, sans-serif; /* Specific to the form */
 }
 
-.container.my-4 {
-    margin: 0 auto; /* Center the container */
-    text-align: center; /* Align text */
-}
 
 
 .subscribe-container {
@@ -343,10 +407,32 @@ html {
 }
 
 
-
 .subscribe-container h1, .subscribe-container p {
     color: #ffffff; /* White text color */
 }
+
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+	text-align: center;
+}
+.modal-body {
+    font-size: 1rem;
+    color: #333;
+	text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .column {
+        flex: 1 1 100%; /* Full width on smaller screens */
+        max-width: none;
+    }
+}
+
 
 @media (max-width: 768px) {
     .introText {
