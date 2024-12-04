@@ -193,7 +193,7 @@ html {
 .introText p {
     font-family: futura;
     font-size: 1.2em;
-    color: #080000;
+    color: #555;
     line-height: 1.6; /* Add space between lines */
     margin: 0 auto;
 	text-align: center;
@@ -203,7 +203,7 @@ html {
 .introTextSwords {
     font-family: futura;
     font-size: 1.1em; /* Adjust font size */
-    color: #080000;
+    color: #333;
     line-height: 1.4; /* Add space between lines */
     margin: 20px auto; /* Center horizontally and add vertical margin */
     padding: 0 20px; /* Add padding to bring it in on both sides */
@@ -276,7 +276,7 @@ html {
 .text-box p {
     font-family: Didot;
     font-size: 1.2em;
-    color: #555;
+    color: #333;
     line-height: 1.6;
 }
 
@@ -319,11 +319,30 @@ html {
 	margin: 0 auto; /* Center horizontally */
 }
 
+
 #subscribe-form {
     background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
-    padding: 20px;
-    border-radius: 2px;
+    padding: 30px; /* Increased padding for more space inside the form */
+    border-radius: 8px; /* Slightly rounded corners */
+    width: 100%; /* Full width */
+    max-width: 600px; /* Limit the maximum width of the form */
+    margin: 0 auto; /* Center the form */
 }
+
+#subscribe-form input.form-control {
+    font-size: 1em; /* Increase font size for better readability */
+    padding: 10px; /* Add padding for a larger clickable area */
+    border-radius: 4px; /* Add subtle rounding to input fields */
+    border: 1px solid #ccc; /* Ensure a visible border */
+}
+
+#subscribe-form .btn-primary {
+    font-size: 1em; /* Increase button font size */
+    padding: 10px; /* Increase button padding */
+    border-radius: 4px; /* Ensure button matches input style */
+}
+
+
 
 .subscribe-container h1, .subscribe-container p {
     color: #ffffff; /* White text color */
