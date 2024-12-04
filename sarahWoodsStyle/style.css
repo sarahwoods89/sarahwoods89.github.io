@@ -105,6 +105,8 @@ html {
     padding: 20px;
 	text-align: center;
 	margin: 0 auto; /* Center horizontally */
+	width: 100%;
+	
 }
 
 
@@ -134,12 +136,26 @@ html {
     padding: 0 20px;
 }
 
+.carousel {
+    width: 100%; /* Ensure the carousel spans the full width */
+    overflow: hidden; /* Prevent content overflow */
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Center-align images */
+    align-items: center; /* Vertically align items */
+}
 
 .carousel img {
     height: 350px; /* Adjust the height to fit the screen */
     object-fit: cover; /* Ensure images don't stretch */
     margin: 0 auto; /* Center the images */
 	z-index: 0;
+}
+
+.footer-icon {
+    filter: none; /* Disable inversion */
+    fill: white; /* Ensure the logo appears in white */
+    width: 40px;
+    height: auto;
 }
 
 
@@ -166,8 +182,7 @@ html {
 #footer a img {
     width: 40px;
     height: auto;
-    filter: invert(1);
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 #footer a img:hover {
@@ -176,31 +191,27 @@ html {
 
 /* Paragraph Styling */
 .introText p {
-    font-family: Didot;
-    font-size: 1.4em;
+    font-family: futura;
+    font-size: 1.2em;
     color: #080000;
     line-height: 1.6; /* Add space between lines */
     margin: 0 auto;
 	text-align: center;
 	margin-top: 10px;
 }
-.introTextSwords p {
-    font-family: Didot;
-    font-size: 1.1em;
+
+.introTextSwords {
+    font-family: futura;
+    font-size: 1.1em; /* Adjust font size */
     color: #080000;
-    line-height: 1.6; /* Add space between lines */
-    margin: 0 auto;
-	text-align: center;
+    line-height: 1.4; /* Add space between lines */
+    margin: 20px auto; /* Center horizontally and add vertical margin */
+    padding: 0 20px; /* Add padding to bring it in on both sides */
+    max-width: 800px; /* Restrict the width */
+    text-align: center; /* Center-align text */
 }
 
-/* Image Container Styling */
-.imageContainer {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    justify-content: center; /* Center-align images */
-    gap: 20px; /* Add spacing between rows */
-    margin-top: 10px; /* Add spacing above the image grid */
-}
+
 
 /* Row Styling */
 .row {
@@ -318,6 +329,20 @@ html {
     color: #ffffff; /* White text color */
 }
 
+@media (max-width: 768px) {
+    .introText {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+        padding: 15px;
+    }
+
+    .carousel img {
+        max-width: 90%; /* Ensure images are responsive */
+    }
+
+    #main {
+        padding: 10px;
+    }
+}
 
 
 /* Responsive Design */
@@ -367,11 +392,24 @@ html {
 		font-family: Didot, serif;
 	}
 
+
+/* Responsive stacking for the about blocks */
 @media (max-width: 768px) {
     .about-block {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; /* Stack elements vertically */
+        text-align: center; /* Center-align the content */
     }
+
+    .about-block .text-box, .about-block .image-box {
+        width: 100%; /* Take full width on smaller screens */
+        margin-bottom: 20px; /* Add spacing between stacked items */
+    }
+
+    .about-block .image-box img {
+        max-width: 100%; /* Ensure images scale properly */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
 
     .text-box, .image-box {
         width: 100%; /* Full width on smaller screens */
