@@ -249,13 +249,13 @@ html {
 
 
 
-.introTextSwords {
-    font-family: futura;
+.introTextSwords p {
+    font-family: Didot;
     font-size: 1.1em; /* Adjust font size */
     color: #333;
     line-height: 1.6; /* Add space between lines */
     margin: 20px auto; /* Center horizontally and add vertical margin */
-    padding: 30px; /* Add padding to bring it in on both sides */
+    padding: 20px; /* Add padding to bring it in on both sides */
     width: 800px; /* Restrict the width */
     text-align: justify;
 }
