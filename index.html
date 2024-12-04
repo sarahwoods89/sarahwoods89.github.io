@@ -12,8 +12,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
 </head>
-
-</head>
 <body>
     <!-- Header Section -->
     <div id="header">
@@ -27,37 +25,35 @@
             <div class="link"><a href="subscribe/subscribe.html">SUBSCRIBE</a></div>
         </div>
     </div>
-	
 
     <!-- Main Content -->
     <div id="main">
-	<div class="introText">
-	<p>Painting. Writing. Web3</p>
-	</div>
-	<br>
-	</br>
+        <div class="introText">
+            <!-- The typewriter text -->
+            <p id="typewriter"></p>
+        </div>
         <div id="content">
-		<div class="carousel-container">
-            <!-- Slick Carousel -->
-            <div class="carousel">
-                <div><img src="images/pictures/neurogenesisJump.png" alt="Neurogenesis abstract painting"></div>
-				<div><img src="images/pictures/playPrintTwo.png" alt="play print"></div>
-                <div><img src="images/pictures/commonGroundsPainting.png" alt="Common Grounds Painting"></div>
-                <div><img src="images/pictures/slothPainting.png" alt="Sloth painting"></div>
-                <div><img src="images/pictures/commonGroundsJump.png" alt="jumping in front of painting"></div>
-                <div><img src="images/pictures/spinCity.png" alt="spin City painting"></div>
-				<div><img src="images/pictures/playPrint.png" alt="Sloth painting"></div>
-				<div><img src="images/pictures/ireland.png" alt="spin City painting"></div>
-				<div><img src="images/pictures/vogueMagazineLeft.png" alt="spin City painting"></div>
-				<div><img src="images/pictures/vogueMagazineRight.png" alt="spin City painting"></div>
-				<div><img src="images/pictures/theWooBag.png" alt="spin City painting"></div>
+            <div class="carousel-container">
+                <!-- Slick Carousel -->
+                <div class="carousel">
+                    <div><img src="images/pictures/neurogenesisJump.png" alt="Neurogenesis abstract painting"></div>
+                    <div><img src="images/pictures/playPrintTwo.png" alt="play print"></div>
+                    <div><img src="images/pictures/commonGroundsPainting.png" alt="Common Grounds Painting"></div>
+                    <div><img src="images/pictures/slothPainting.png" alt="Sloth painting"></div>
+                    <div><img src="images/pictures/commonGroundsJump.png" alt="jumping in front of painting"></div>
+                    <div><img src="images/pictures/spinCity.png" alt="spin City painting"></div>
+                    <div><img src="images/pictures/playPrint.png" alt="Sloth painting"></div>
+                    <div><img src="images/pictures/ireland.png" alt="spin City painting"></div>
+                    <div><img src="images/pictures/vogueMagazineLeft.png" alt="spin City painting"></div>
+                    <div><img src="images/pictures/vogueMagazineRight.png" alt="spin City painting"></div>
+                    <div><img src="images/pictures/theWooBag.png" alt="spin City painting"></div>
+                </div>
             </div>
         </div>
-		</div>
     </div>
 
     <!-- Footer Section -->
-        <footer id="footer">
+    <footer id="footer">
         <p>&copy; 2024 Sarah Woods Art. All Rights Reserved.</p>
         <p>
             <!-- Instagram Icon -->
@@ -69,7 +65,7 @@
                 <img src="images/socials/linktreeFooterIcon.png" alt="Lens Logo">
             </a>
             <!-- The email icon -->
-			<a href="mailto:sarahwoodsartist@gmail.com" title="email me">
+            <a href="mailto:sarahwoodsartist@gmail.com" title="email me">
                 <img src="images/socials/emailFooterIcon.png" alt="Hug Logo">
             </a>
         </p>
@@ -77,24 +73,44 @@
 
     <!-- Initialize Slick Carousel -->
     <script>
-        $(document).ready(function(){
-    $('.carousel').slick({
-        infinite: true,          // Enables infinite looping
-        slidesToShow: 3,         // Number of visible slides
-        slidesToScroll: 1,       // Scroll one slide at a time
-        autoplay: true,          // Enable autoplay
-        autoplaySpeed: 0,        // Continuous motion
-        arrows: false,           // Disable navigation arrows
-        dots: false,             // Disable dots
-        speed: 6000,             // Duration for one full loop (adjust as needed)
-        cssEase: 'linear',       // Smooth, continuous motion
-        variableWidth: true,     // Allow dynamic slide widths
-        centerMode: true         // Center the active slide
-    });
+        $(document).ready(function () {
+            $('.carousel').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 0, // Continuous motion
+                arrows: false,
+                dots: false,
+                speed: 6000,
+                cssEase: 'linear',
+                variableWidth: true,
+                centerMode: true
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+			const text = "Painting. Writing. Web3"; // The text to type
+			const speed = 100; // Typing speed in milliseconds
+			const cursorTimeout = 1000; // Time (in ms) before the cursor disappears after typing finishes
+			let index = 0;
+
+    function typeWriter() {
+        if (index < text.length) {
+            document.getElementById("typewriter").textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, speed);
+        } else {
+            // Remove the cursor animation after the text is fully typed
+            setTimeout(() => {
+                document.getElementById("typewriter").style.borderRight = "none";
+            }, cursorTimeout);
+        }
+    }
+
+    typeWriter();
 });
 
     </script>
 </body>
 </html>
-
-
