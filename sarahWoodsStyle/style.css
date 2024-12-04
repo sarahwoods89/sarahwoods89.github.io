@@ -249,7 +249,7 @@ html {
 
 
 
-.introTextSwords p {
+.introTextSwords {
     font-family: Didot;
     font-size: 1.1em; /* Adjust font size */
     color: #333;
