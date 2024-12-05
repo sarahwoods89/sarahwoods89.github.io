@@ -13,35 +13,40 @@ min-height : 100vh;
 margin : 0 auto;
 text-align : center;
 }
+
+body {
+    margin: 0;
+}
+
 html {
 overflow-y : scroll;
 }
+
 #header {
-height : 100px;
-display : flex;
-justify-content : space-between;
-align-items : center;
-padding : 20px;
-background-color : #ffffff;
-width : 100%;
-border : none;
-font-family : sans-serif;
-font-size : 12px;
-line-height : 1.5;
-position : relative;
-z-index : 1000;
-flex-shrink : 0;
+    height: 120px; /* Increase header height to accommodate the larger logo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    width: 100%;
+    border: none;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1000;
+    flex-shrink: 0;
 }
-#header {
-display : flex;
-justify-content : space-between;
-align-items : center;
-padding : 20px;
-background-color : #fff;
-}
+
+
 #header-logo img {
-max-width : 200px;
+    width: auto; 
+    height: 100px; /* Set a fixed height for consistency */
+    margin: 0 auto;
 }
+
+
 #header-nav {
 display : flex;
 gap : 20px;
@@ -58,6 +63,7 @@ text-decoration : underline;
 max-width : 250px;
 height : auto;
 max-height : 100px;
+margin: 0 auto;
 }
 #header-nav {
 display : flex;
