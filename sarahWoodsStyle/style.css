@@ -48,17 +48,17 @@ overflow-y : scroll;
     margin: 0 auto; /* Center the image */
 }
 
-
-/* header styling */
+/* header styling 
 #header-nav {
 display : flex;
 gap : 20px;
-}
+}*/
+
 /* link in header styling */
 #header-nav a {
 text-decoration : none;
-color : black;
-padding : 10px;
+color : black; /* colour */
+padding : 10px; /* add padding to the nav header */
 }
 #header-nav a.active {
 text-decoration : underline;
@@ -80,11 +80,13 @@ transition : color 0.3s, text-decoration 0.3s;
 }
 #header-nav .link a.active {
 color : black;
-text-decoration : underline;
+text-decoration : underline; /* underline the header to show what page you are on */
 }
 #header-nav .link a:hover {
-color : #2102d1;
+color : #2102d1; /* turns blue on hovering over the link */
 }
+
+/* important features to override any bootstrap that absolutely caused me hassle.  */
 #header, #header-nav, #header-nav .nav-item .nav-link {
 font-family : sans-serif !important ;
 font-size : 12px !important ;
@@ -92,12 +94,16 @@ color : black !important ;
 margin : 0 !important ;
 padding : 20px !important ;
 }
+
+/* decorating these id's  */
 .nav-item .nav-link {
 text-decoration : none;
 font-family : sans-serif;
 font-size : 12px;
 color : black;
 }
+
+/* styling the main so that all is the same, white background, aligning center, jsutify the content that will be in teh main etc */
 #main {
 display : flex;
 background-color : #ffffff;
@@ -111,6 +117,9 @@ text-align : center;
 margin : 0 auto;
 width : 100%;
 }
+
+/* styling the content class to house various other calsses that content will host*/
+
 #content {
 max-width : 1200px;
 width : 100%;
@@ -126,11 +135,14 @@ top : 50%;
 left : 50%;
 transform : translate(-50%,-50%);
 }
+/* created a container to hold my carousel*/
 .carousel-container {
 max-width : 1200px;
 margin : 0 auto;
 padding : 0 20px;
 }
+
+/* carousel style */
 .carousel {
 width : 100%;
 overflow : hidden;
@@ -138,18 +150,21 @@ display : flex;
 justify-content : center;
 align-items : center;
 }
+
+/* styling the images within the carousel */
 .carousel img {
 height : 350px;
 object-fit : cover;
 margin : 0 auto;
 z-index : 0;
 }
+
+/* styling the footer icons that i have links behind. the icons for socials etc*/
 .footer-icon {
-filter : ;
-fill : white;
-width : 40px;
-height : auto;
+    width: 40px;
+    height: auto;
 }
+/* styling the actual footer with black colour and centering icons in the footer etc  */
 #footer {
 background-color : #000000;
 color : #ffffff;
@@ -158,6 +173,8 @@ padding : 20px 10px;
 width : 100%;
 margin : 0 auto;
 }
+
+/* paragraph writing in the footer */
 #footer p {
 margin-bottom : 10px;
 }
@@ -167,6 +184,8 @@ margin : 0 10px;
 text-decoration : none;
 color : #ffffff;
 }
+
+/* images in footer styling */
 #footer a img {
 width : 40px;
 height : auto;
@@ -175,6 +194,8 @@ transition : transform 0.2s ease;
 #footer a img:hover {
 transform : scale(1.2);
 }
+
+/* intro text on index page. changed colour to a dark grey. text size, justifying the text */
 .introText p {
 font-family : futura;
 font-size : 1.2em;
@@ -184,6 +205,8 @@ margin : 0 auto;
 text-align : justify;
 margin-top : 10px;
 }
+
+/* creating a style for this paragraph. I purposely didn't want a header text. I wanted it ot be more subtle as the carousel is sort of hte main feature */
 #typewriter {
 font-family : "Didot", serif;
 font-size : 1.5em;
@@ -193,6 +216,8 @@ overflow : hidden;
 border-right : 2px solid #555;
 animation : blinkCursor 0.7s steps(1) infinite;
 }
+
+/* have the cursor disappear */
 @keyframes blinkCursor {
 from {
 border-right-color : #555;
@@ -201,6 +226,8 @@ to {
 border-right-color : transparent;
 }
 }
+
+/* i created a class for the intro text for the sarah words page seperate from the other intotext on my index page */
 .introTextSwords {
 font-family : Didot;
 font-size : 1.2em;
@@ -211,6 +238,8 @@ padding : 20px;
 width : 800px;
 text-align : justify;
 }
+
+/* a container for inages on my sarah words page  */
 .imageContainer {
 max-width : 1200px;
 margin : 0 auto;
@@ -224,12 +253,13 @@ justify-content : center;
 gap : 40px;
 }
 
+/* styling the rows */
 .row {
 display : flex;
 flex-wrap : wrap;
 justify-content : center;
 width : 100%;
-margin-bottom: 40px;
+margin-bottom: 40px; /* create more space at the bottom */
 }
 
 
@@ -248,17 +278,21 @@ width : 100%;
 height : auto;
 border-radius : 4px;
 }
+
+/* the conainers within the image container. creating padding so none of them touch */
 .sWordsImageContainer {
 position : relative;
 display : block;
 width : 100%;
 padding : 10px;
 }
+
+/* adding a buy button so people can go to the website that allows people to buy the NFTs */
 .imgButton {
 display : inline-block;
 padding : 8px 16px;
 margin-top : 10px;
-font-family : Arial, sans-serif;
+font-family : sans-serif;
 font-size : 14px;
 text-decoration : none;
 color : #333;
@@ -268,20 +302,18 @@ text-align : center;
 transition : all 0.3s ease;
 background-color : transparent;
 }
+
+/* styling to change on a hover */
+
 .imgButton:hover {
 background-color : #333;
 color : #fff;
 border-color : #333;
 transform : scale(1.05);
 }
-.about-section {
-display : flex;
-flex-direction : column;
-gap : 50px;
-max-width : 1200px;
-margin : 0 auto;
-padding : 20px;
-}
+
+/* about page styling. giving alignment, padding meaning space, setting the maximum widths for about blocks and the text boxes within the content class on this page */
+
 .about-block {
 display : flex;
 align-items : center;
@@ -312,6 +344,8 @@ color : #333;
 line-height : 1.6;
 text-align : justify;
 }
+
+/* styling for the image box and the images in them */
 .image-box {
 position : relative;
 width : 50%;
@@ -322,14 +356,18 @@ height : auto;
 border-radius : 1px;
 box-shadow : 0 4px 8px rgb(0, 0, 0, 0.1);
 }
+
+/* subscription box styling, font family and font size as well as the style of whatt people will input. the following boxes are outling how the sub box looks. the type space, if they have any rounded corners etc. the colors used and padding to create space around any container */
 #subscribe-form label {
-font-family : Arial, sans-serif;
+font-family : sans-serif;
 font-size : 14px;
 color : #333;
 }
 #subscribe-form input {
-font-family : Arial, sans-serif;
+font-family : sans-serif;
 }
+
+/* styling the container, i wanted to add my own art to make a somewhat boring subscription box a little bit less boring */
 .subscribe-container {
 background-image : url("../images/pictures/landscape.jpg");
 background-size : cover;
@@ -362,18 +400,20 @@ border-radius : 4px;
 .subscribe-container h1, .subscribe-container p {
 color : #ffffff;
 }
+/* i added a popup box on this page as I switched form a contact us page, so i wanted to add another response behaviour. this popup says thansk for subscribing */
+
 .modal-content {
 border-radius : 10px;
 box-shadow : 0 4px 10px rgb(0, 0, 0, 0.2);
 }
 .modal-title {
 font-size : 1.5rem;
-font-weight : bold;
+font-weight : bold; /* making the font bold, that bit darker */
 text-align : center;
 }
 .modal-body {
 font-size : 1rem;
-color : #333;
+color : #333; /* keeping the greyish colour */
 text-align : justify;
 }
 
