@@ -173,7 +173,7 @@ transform : scale(1.2);
 .introText p {
 font-family : futura;
 font-size : 1.2em;
-color : #555;
+color : #3d3b3b;
 line-height : 1.6;
 margin : 0 auto;
 text-align : justify;
@@ -198,9 +198,9 @@ border-right-color : transparent;
 }
 .introTextSwords {
 font-family : Didot;
-font-size : 1.1em;
+font-size : 1.2em;
 color : #333;
-line-height : 1.6;
+line-height : 0.9;
 margin : 20px auto;
 padding : 20px;
 width : 800px;
@@ -214,15 +214,25 @@ background-color : #ffffff;
 border-radius : 8px;
 display : flex;
 flex-wrap : wrap;
+flex-direction: column; /* Ensure rows stack vertically */
 justify-content : center;
-gap : 20px;
+gap : 40px;
 }
+
 .row {
 display : flex;
 flex-wrap : wrap;
 justify-content : center;
 width : 100%;
+margin-bottom: 40px;
 }
+
+
+.row + .row {
+    margin-top: 40px; /* Add spacing specifically between rows */
+}
+
+
 .column {
 flex : 1 1 calc(33.33% - 20px);
 box-sizing : border-box;
@@ -233,11 +243,11 @@ width : 100%;
 height : auto;
 border-radius : 4px;
 }
-.imgTextContainer {
+.sWordsImageContainer {
 position : relative;
 display : block;
 width : 100%;
-padding : 5px;
+padding : 10px;
 }
 .imgButton {
 display : inline-block;
@@ -288,7 +298,7 @@ border-radius : 2px;
 font-family : 'Didot', serif;
 font-size : 2em;
 margin-bottom : 10px;
-color : #333;
+color : #474545;
 }
 .text-box p {
 font-family : Didot;
@@ -361,77 +371,94 @@ font-size : 1rem;
 color : #333;
 text-align : justify;
 }
+
+/* General responsive styles for screens up to 768px */
 @media (max-width: 768px) {
-.column {
-flex : 1 1 100%;
-max-width : none;
+    /* Full-width columns for smaller screens */
+    .column {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    /* Adjust text size and padding in intro section */
+    .introText {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    /* Adjust carousel image size */
+    .carousel img {
+        max-width: 90%;
+    }
+
+    /* Reduce padding for main content */
+    #main {
+        padding: 10px;
+    }
+
+    /* Adjust about section layout */
+    .about-block {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-block .text-box, 
+    .about-block .image-box {
+        width: 100%; /* Full width for smaller screens */
+        margin-bottom: 20px; /* Add spacing between elements */
+    }
+
+    .about-block .image-box img {
+        max-width: 100%; /* Ensure responsive images */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Adjust contact container */
+    .contact-container {
+        max-width: 90%;
+    }
+
+    /* Adjust form layout */
+    .form-row {
+        flex-direction: column; /* Stack form fields */
+    }
+
+    .form-group {
+        flex: 1 1 100%; /* Full width for each form group */
+    }
+
+    /* Adjust content container layout */
+    #content {
+        padding: 5%; /* Add spacing */
+        max-width: 90%; /* Restrict width */
+    }
+
+    /* Adjust header layout for smaller screens */
+    #header2 {
+        flex-direction: column;
+        text-align: center;
+    }
 }
-}
-@media (max-width: 768px) {
-.introText {
-font-size : 1.2em;
-padding : 15px;
-}
-.carousel img {
-max-width : 90%;
-}
-#main {
-padding : 10px;
-}
-}
-@media (max-width: 768px) {
-.contact-container {
-max-width : 90%;
-}
-}
-@media (max-width: 768px) {
-.form-row {
-flex-direction : column;
-}
-.form-group {
-flex : 1 1 100%;
-}
-}
-@media (max-width: 768px) {
-#header2 {
-flex-direction : column;
-text-align : center;
-}
-#content {
-padding : 5%;
-max-width : 90%;
-}
-}
+
+/* Additional styles for smaller screens (up to 480px) */
 @media (max-width: 480px) {
-#header1 img {
-max-width : 80px;
+    /* Adjust header logo size */
+    #header1 img {
+        max-width: 80px; /* Reduce logo size */
+    }
+
+    /* Adjust content paragraph styling */
+    #content p {
+        font-size: 0.8em; /* Smaller font size */
+        font-family: Didot, serif; /* Maintain font style */
+    }
 }
-#content h4 {
-font-size : 1em;
-font-family : Arial;
-}
-#content p {
-font-size : 0.8em;
-font-family : Didot, serif;
-}
-}
-@media (max-width: 768px) {
-.about-block {
-flex-direction : column;
-text-align : center;
-}
-.about-block .text-box, .about-block .image-box {
-width : 100%;
-margin-bottom : 20px;
-}
-.about-block .image-box img {
-max-width : 100%;
-height : auto;
-}
-}
+
+/* Shared styling for text boxes and image containers */
 .text-box, .image-box {
-width : 100%;
+    width: 100%;
 }
+
 .text-box {
-margin-bottom : 20px;
+    margin-bottom: 20px;
 }
