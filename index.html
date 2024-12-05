@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Discover Sarah Woods' creative works in painting, writing, and Web3 collections. Subscribe to keep up to date.">
     <title>Sarah Woods</title>
-    <link rel="icon" href="images/logo/sWFavicon.png" type="image/png">
+    <link rel="icon" href="images/logo/sWFavicon.png" type="image/png"> <!-- Favicon image added -->
     <!-- Slick Carousel -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
-    <link rel="stylesheet" href="sarahWoodsStyle/style.css">
+    <link rel="stylesheet" href="sarahWoodsStyle/style.css"> <!-- pointing back to my css file -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
 </head>
@@ -17,7 +17,7 @@
     <!-- Header Section -->
     <div id="header">
         <div id="header-logo">
-            <a href="index.html"><img src="images/logo/sWLogoVectorWithName.png" alt="Logo" class="logo"></a>
+            <a href="index.html"><img src="images/logo/sWLogoVectorWithName.png" alt="Logo" class="logo"></a> <!-- created my own logo on Canva -->
         </div>
         <div id="header-nav">
             <div class="link"><a href="index.html" class="active">HOME</a></div>
@@ -27,11 +27,11 @@
         </div>
     </div>
 
-    <!-- Main Content -->
+    <!-- Main Content that exists on all pages to house various bits of content-->
     <div id="main">
         <div class="introText">
             <!-- The typewriter text -->
-            <p id="typewriter"></p>
+            <p id="typewriter"></p> <!-- i wanted a typewriter effect to add some movement to my words. Because i have opted for a paragraph instead of a big flashy header font, i wanted to jazz up the toned down font as well -->
         </div>
 		<br>
 		</br>
@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    <!-- Footer Section -->
+    <!-- Footer Section is the same on all pages. i have added links to all the icons bringing peopel to my various other pages -->
     <footer id="footer">
         <p>&copy; 2024 Sarah Woods Art. All Rights Reserved.</p>
         <p>
@@ -74,7 +74,7 @@
         </p>
     </footer>
 
-    <!-- Initialize Slick Carousel -->
+    <!-- Initialize Slick Carousel once the page is loaded, i have set that the carousel kicks in. honestly, sometimes it stalls and i couldn't find out why. sometimes it speeds up at het start. i set hte sped that i was happy with and a continuous motion of speed -->
     <script>
         $(document).ready(function () {
             $('.carousel').slick({

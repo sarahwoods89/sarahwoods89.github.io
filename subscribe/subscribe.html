@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> <!-- most pages have hte same head info except when there is bootstrap involved like this. the index page also has linsk to allow the use of slick -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Subscribe to Sarah Woods' updates and be the first to know about her new artworks, projects, and exhibitions.">
@@ -21,7 +21,7 @@
             <div class="link"><a href="../subscribe/subscribe.html" class="active">SUBSCRIBE</a></div>
         </div>
     </div>
-    <div id="main">
+    <div id="main"> <!-- This main page is holding a subscription container from bootstrap. the subscription contianer asks for name and email and will not accept an email without an @ and it will not allow someone to press submit without a name either -->
         <div class="subscribe-container">
             <div class="text-center mb-4">
                 <p>Be the first to know about new works, writing, and projects.</p>
@@ -61,7 +61,7 @@
         </p>
     </footer>
 
-    <!-- Thank You Modal -->
+    <!-- Thank You Modal added in to have another popup box to say thank you to anyoen who signs up to be a subscriber -->
     <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -78,7 +78,7 @@
             </div>
         </div>
     </div>
-
+<!-- bootstrap script that spits out a thank you once a name and email has been received -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById("subscribe-form").addEventListener("submit", function(event) {
