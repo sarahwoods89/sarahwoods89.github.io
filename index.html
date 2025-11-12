@@ -1,0 +1,123 @@
+<!DOCTYPE html> <!-- x23170662 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Discover Sarah Woods' creative works in painting, writing, and Web3 collections. Subscribe to keep up to date.">
+    <title>Sarah Woods</title>
+    <link rel="icon" href="images/logo/sWFavicon.png" type="image/png"> <!-- Favicon image added -->
+    <!-- Slick Carousel REF Google, wb3Schhols, chat GPT for additional help -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="sarahWoodsStyle/style.css"> <!-- pointing back to my css file -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+<div id="header" class="d-flex justify-content-between align-items-center px-4 py-3">
+  <div id="header-logo">
+    <a href="/index.html">
+      <img src="/images/logo/sWLogoVectorWithName.png" alt="Logo" class="logo" style="height: 40px;">
+    </a>
+  </div>
+  <div id="header-nav" class="d-flex gap-4">
+    <a href="/index.html">HOME</a>
+    <a href="/sarahWords/sarahWords.html">SARAH WORDS</a>
+    <a href="/about/about.html">ABOUT</a>
+    <a href="/shop/index.html">SHOP</a>
+    <a href="/subscribe/subscribe.html">SUBSCRIBE</a>
+  </div>
+</div>
+
+
+    <!-- Main Content that exists on all pages to house various bits of content Ref NCI class videos -->
+    <div id="main">
+        <div class="introText">
+            <!-- The typewriter text -->
+            <p id="typewriter"></p> <!-- i wanted a typewriter effect to add some movement to my words. Because i have opted for a paragraph instead of a big flashy header font, i wanted to jazz up the toned down font as well -->
+        </div>
+		<br>
+		</br>
+        <div id="content">
+            <div class="carousel-container">
+                <!-- Slick Carousel -->
+                <div class="carousel">
+                    <div><img src="images/pictures/neurogenesisJump.webp" alt="Neurogenesis abstract painting"></div>
+                    <div><img src="images/pictures/playPrintTwo.webp" alt="play print"></div>
+                    <div><img src="images/pictures/commonGroundsPainting.webp" alt="Common Grounds Painting"></div>
+                    <div><img src="images/pictures/slothPainting.webp" alt="Sloth painting"></div>
+                    <div><img src="images/pictures/commonGroundsJump.webp" alt="jumping in front of painting"></div>
+                    <div><img src="images/pictures/spinCity.webp" alt="spin City painting"></div>
+                    <div><img src="images/pictures/playPrint.webp" alt="Sloth painting"></div>
+                    <div><img src="images/pictures/ireland.webp" alt="spin City painting"></div>
+                    <div><img src="images/pictures/vogueMagazineLeft.webp" alt="spin City painting"></div>
+                    <div><img src="images/pictures/vogueMagazineRight.webp" alt="spin City painting"></div>
+                    <div><img src="images/pictures/theWooBag.webp" alt="spin City painting"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section is the same on all pages. i have added links to all the icons bringing people to my various other pages  REF WBSchools -->
+    <footer id="footer">
+        <p>&copy; 2024 Sarah Woods Art. All Rights Reserved.</p>
+        <p>
+            <!-- Instagram Icon -->
+            <a href="https://instagram.com/sarahwoods_art" title="follow on Instagram">
+                <img src="images/socials/instagramFooterIcon.png" alt="Instagram Logo">
+            </a>
+            <!-- Linktree Icon -->
+            <a href="https://linktr.ee/sarahwoodsartist" title="Linktree">
+                <img src="images/socials/linktreeFooterIcon.png" alt="Lens Logo">
+            </a>
+            <!-- The email icon -->
+            <a href="mailto:sarahwoodsartist@gmail.com" title="email me">
+                <img src="images/socials/emailFooterIcon.png" alt="Hug Logo">
+            </a>
+        </p>
+    </footer>
+
+    <!-- Initialize Slick Carousel once the page is loaded, i have set that the carousel kicks in. honestly, sometimes it stalls and i couldn't find out why. sometimes it speeds up at het start. i set hte sped that i was happy with and a continuous motion of speed REF W33Schools-->
+    <script>
+        $(document).ready(function () {
+            $('.carousel').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000, // Continuous motion
+                arrows: false,
+                dots: false,
+                speed: 6000,
+                cssEase: 'linear',
+                variableWidth: true,
+                centerMode: true
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+			const text = "Painting. Writing. Web3"; // The text to type
+			const speed = 100; // Typing speed in milliseconds
+			const cursorTimeout = 1000; // Time (in ms) before the cursor disappears after typing finishes
+			let index = 0;
+
+    function typeWriter() {
+        if (index < text.length) {
+            document.getElementById("typewriter").textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, speed);
+        } else {
+            // Remove the cursor animation after the text is fully typed
+            setTimeout(() => {
+                document.getElementById("typewriter").style.borderRight = "none";
+            }, cursorTimeout);
+        }
+    }
+
+    typeWriter();
+});
+
+    </script>
+</body>
+</html>

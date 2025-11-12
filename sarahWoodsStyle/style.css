@@ -1,0 +1,515 @@
+* {
+margin : 0;
+padding : 0;
+box-sizing : border-box;
+}
+/* body of page styling */
+body {
+font-family : Arial, sans-serif;
+background-color : #ffffff;
+color : #333;
+display : flex;
+flex-direction : column;
+min-height : 100vh;
+margin : 0 auto;
+text-align : center;
+}
+/* Ensure no margin collapse in body */
+body {
+    margin: 0;
+}
+/* Enable vertical scrolling for content overflow */
+html {
+overflow-y : scroll;
+}
+
+#header {
+    height: 120px; /* Increase header height to accommodate the larger logo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    width: 100%;
+    border: none;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1000;
+    flex-shrink: 0;
+}
+
+/* Logo Styling */
+#header-logo img {
+    max-width: 250px; /* Limit the maximum width */
+    height: auto; /* Adjust height automatically to maintain aspect ratio */
+    max-height: 100px; /* Prevent height from exceeding 100px */
+    margin: 0 auto; /* Center the image */
+}
+
+/* header styling 
+#header-nav {
+display : flex;
+gap : 20px;
+}*/
+
+/* link in header styling */
+#header-nav a {
+text-decoration : none;
+color : black; /* colour */
+padding : 10px; /* add padding to the nav header */
+}
+#header-nav a.active {
+text-decoration : underline;
+}
+
+#header-nav {
+display : flex;
+gap : 25px;
+font-family : futura;
+font-size : 12px;
+line-height : 1.5;
+}
+#header-nav .link a {
+text-decoration : none;
+color : black;
+padding : 10px;
+font-size : inherit;
+transition : color 0.3s, text-decoration 0.3s;
+}
+#header-nav .link a.active {
+color : black;
+text-decoration : underline; /* underline the header to show what page you are on */
+}
+#header-nav .link a:hover {
+color : #2102d1; /* turns blue on hovering over the link */
+}
+
+/* important features to override any bootstrap that absolutely caused me hassle.  */
+#header, #header-nav, #header-nav .nav-item .nav-link {
+font-family : sans-serif !important ;
+font-size : 12px !important ;
+color : black !important ;
+margin : 0 !important ;
+padding : 20px !important ;
+}
+
+/* decorating these id's  */
+.nav-item .nav-link {
+text-decoration : none;
+font-family : sans-serif;
+font-size : 12px;
+color : black;
+}
+
+/* styling the main so that all is the same, white background, aligning center, jsutify the content that will be in teh main etc */
+#main {
+display : flex;
+background-color : #ffffff;
+justify-content : center;
+max-width : 1200px;
+align-items : center;
+flex-direction : column;
+min-height : 100vh;
+padding : 20px;
+text-align : center;
+margin : 0 auto;
+width : 100%;
+}
+
+/* styling the content class to house various other calsses that content will host*/
+
+#content {
+max-width : 1200px;
+width : 100%;
+margin : 0 auto;
+padding : 10px;
+line-height : 2.0;
+text-align : center;
+margin : 0 auto;
+}
+.centered {
+position : absolute;
+top : 50%;
+left : 50%;
+transform : translate(-50%,-50%);
+}
+/* created a container to hold my carousel*/
+.carousel-container {
+max-width : 1200px;
+margin : 0 auto;
+padding : 0 20px;
+}
+
+/* carousel style */
+.carousel {
+width : 100%;
+overflow : hidden;
+display : flex;
+justify-content : center;
+align-items : center;
+}
+
+/* styling the images within the carousel */
+.carousel img {
+height : 350px;
+object-fit : cover;
+margin : 0 auto;
+z-index : 0;
+}
+
+/* styling the footer icons that i have links behind. the icons for socials etc*/
+.footer-icon {
+    width: 40px;
+    height: auto;
+}
+/* styling the actual footer with black colour and centering icons in the footer etc  */
+#footer {
+background-color : #000000;
+color : #ffffff;
+text-align : center;
+padding : 20px 10px;
+width : 100%;
+margin : 0 auto;
+}
+
+/* paragraph writing in the footer */
+#footer p {
+margin-bottom : 10px;
+}
+#footer a {
+display : inline-block;
+margin : 0 10px;
+text-decoration : none;
+color : #ffffff;
+}
+
+/* images in footer styling */
+#footer a img {
+width : 40px;
+height : auto;
+transition : transform 0.2s ease;
+}
+#footer a img:hover {
+transform : scale(1.2);
+}
+
+/* intro text on index page. changed colour to a dark grey. text size, justifying the text */
+.introText p {
+font-family : futura;
+font-size : 1.2em;
+color : #3d3b3b;
+line-height : 1.6;
+margin : 0 auto;
+text-align : justify;
+margin-top : 10px;
+}
+
+/* creating a style for this paragraph. I purposely didn't want a header text. I wanted it ot be more subtle as the carousel is sort of hte main feature */
+#typewriter {
+font-family : "Didot", serif;
+font-size : 1.5em;
+color : #555;
+white-space : nowrap;
+overflow : hidden;
+border-right : 2px solid #555;
+animation : blinkCursor 0.7s steps(1) infinite;
+}
+
+/* have the cursor disappear */
+@keyframes blinkCursor {
+from {
+border-right-color : #555;
+}
+to {
+border-right-color : transparent;
+}
+}
+
+/* i created a class for the intro text for the sarah words page seperate from the other intotext on my index page */
+.introTextSwords {
+font-family : Didot;
+font-size : 1.2em;
+color : #333;
+line-height : 0.9;
+margin : 20px auto;
+padding : 20px;
+width : 800px;
+text-align : justify;
+}
+
+/* a container for inages on my sarah words page  */
+.imageContainer {
+max-width : 1200px;
+margin : 0 auto;
+padding : 20px;
+background-color : #ffffff;
+border-radius : 8px;
+display : flex;
+flex-wrap : wrap;
+flex-direction: column; /* Ensure rows stack vertically */
+justify-content : center;
+gap : 40px;
+}
+
+/* styling the rows */
+.row {
+display : flex;
+flex-wrap : wrap;
+justify-content : center;
+width : 100%;
+margin-bottom: 40px; /* create more space at the bottom */
+}
+
+
+.row + .row {
+    margin-top: 40px; /* Add spacing specifically between rows */
+}
+
+
+.column {
+flex : 1 1 calc(33.33% - 20px);
+box-sizing : border-box;
+max-width : 300px;
+}
+.column img {
+width : 100%;
+height : auto;
+border-radius : 4px;
+}
+
+/* the conainers within the image container. creating padding so none of them touch */
+.sWordsImageContainer {
+position : relative;
+display : block;
+width : 100%;
+padding : 10px;
+}
+
+/* adding a buy button so people can go to the website that allows people to buy the NFTs */
+.imgButton {
+display : inline-block;
+padding : 8px 16px;
+margin-top : 10px;
+font-family : sans-serif;
+font-size : 14px;
+text-decoration : none;
+color : #333;
+border : #333 solid 2px;
+border-radius : 5px;
+text-align : center;
+transition : all 0.3s ease;
+background-color : transparent;
+}
+
+/* styling to change on a hover */
+
+.imgButton:hover {
+background-color : #333;
+color : #fff;
+border-color : #333;
+transform : scale(1.05);
+}
+
+/* about page styling. giving alignment, padding meaning space, setting the maximum widths for about blocks and the text boxes within the content class on this page */
+
+.about-block {
+display : flex;
+align-items : center;
+gap : 20px;
+position : relative;
+}
+.about-block.reverse {
+flex-direction : row-reverse !important ;
+}
+.text-box {
+max-width : 50%;
+z-index : 2;
+background-color : rgb(255, 255, 255, 0.9);
+padding : 20px;
+box-shadow : 0 4px 8px rgb(0, 0, 0, 0.1);
+border-radius : 2px;
+}
+.text-box h2 {
+font-family : 'Didot';
+font-size : 2em;
+margin-bottom : 10px;
+color : #474545;
+}
+.text-box p {
+font-family : Didot;
+font-size : 1.2em;
+color : #333;
+line-height : 1.6;
+text-align : justify;
+}
+
+/* styling for the image box and the images in them */
+.image-box {
+position : relative;
+width : 50%;
+}
+.image-box img {
+width : 100%;
+height : auto;
+border-radius : 1px;
+box-shadow : 0 4px 8px rgb(0, 0, 0, 0.1);
+}
+
+/* subscription box styling, font family and font size as well as the style of whatt people will input. the following boxes are outling how the sub box looks. the type space, if they have any rounded corners etc. the colors used and padding to create space around any container */
+#subscribe-form label {
+font-family : sans-serif;
+font-size : 14px;
+color : #333;
+}
+#subscribe-form input {
+font-family : sans-serif;
+}
+
+/* styling the container, i wanted to add my own art to make a somewhat boring subscription box a little bit less boring */
+.subscribe-container {
+background-image : url("../images/pictures/landscape.jpg");
+background-size : cover;
+background-position : center;
+background-repeat : no-repeat;
+padding : 100px;
+border-radius : 1px;
+box-shadow : 0 4px 6px rgb(0, 0, 0, 0.1);
+margin : 0 auto;
+}
+#subscribe-form {
+background-color : rgb(255, 255, 255, 0.9);
+padding : 60px;
+border-radius : 8px;
+width : 100%;
+max-width : 800px;
+margin : 0 auto;
+}
+#subscribe-form input.form-control {
+font-size : 1em;
+padding : 10px;
+border-radius : 4px;
+border : #ccc solid 1px;
+}
+#subscribe-form .btn-primary {
+font-size : 1em;
+padding : 10px;
+border-radius : 4px;
+}
+.subscribe-container h1, .subscribe-container p {
+color : #ffffff;
+}
+/* i added a popup box on this page as I switched form a contact us page, so i wanted to add another response behaviour. this popup says thansk for subscribing */
+
+.modal-content {
+border-radius : 10px;
+box-shadow : 0 4px 10px rgb(0, 0, 0, 0.2);
+}
+.modal-title {
+font-size : 1.5rem;
+font-weight : bold; /* making the font bold, that bit darker */
+text-align : center;
+}
+.modal-body {
+font-size : 1rem;
+color : #333; /* keeping the greyish colour */
+text-align : justify;
+}
+
+/* General responsive styles for screens up to 768px */
+@media (max-width: 768px) {
+    /* Full-width columns for smaller screens */
+    .column {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    /* Adjust text size and padding in intro section */
+    .introText {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    /* Adjust carousel image size */
+    .carousel img {
+        max-width: 90%;
+    }
+
+    /* Reduce padding for main content */
+    #main {
+        padding: 10px;
+    }
+
+    /* Adjust about section layout */
+    .about-block {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-block .text-box, 
+    .about-block .image-box {
+        width: 100%; /* Full width for smaller screens */
+        margin-bottom: 20px; /* Add spacing between elements */
+    }
+
+    .about-block .image-box img {
+        max-width: 100%; /* Ensure responsive images */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Adjust contact container */
+    .contact-container {
+        max-width: 90%;
+    }
+
+    /* Adjust form layout */
+    .form-row {
+        flex-direction: column; /* Stack form fields */
+    }
+
+    .form-group {
+        flex: 1 1 100%; /* Full width for each form group */
+    }
+
+    /* Adjust content container layout */
+    #content {
+        padding: 5%; /* Add spacing */
+        max-width: 90%; /* Restrict width */
+    }
+
+    /* Adjust header layout for smaller screens */
+    #header2 {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Additional styles for smaller screens (up to 480px) */
+@media (max-width: 480px) {
+    /* Adjust header logo size */
+    #header1 img {
+        max-width: 80px; /* Reduce logo size */
+    }
+
+    /* Adjust content paragraph styling */
+    #content p {
+        font-size: 0.8em; /* Smaller font size */
+        font-family: Didot, serif; /* Maintain font style */
+    }
+}
+
+/* Shared styling for text boxes and image containers */
+.text-box, .image-box {
+    width: 100%;
+}
+
+.text-box {
+    margin-bottom: 20px;
+}
+
+.carousel-inner img {
+  object-fit: contain;
+  max-height: 600px;
+}
+
