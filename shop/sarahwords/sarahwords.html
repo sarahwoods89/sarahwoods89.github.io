@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop – Sarah Woods</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../sarahWoodsStyle/style.css" />
+  <link rel="icon" href="../images/logo/sWFavicon.png" type="image/png" />
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #222;
+      background-color: #fff;
+    }
+
+    h1 {
+      font-weight: 500;
+      margin: 60px 0 40px;
+      text-align: center;
+    }
+
+    .collection-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+
+    .collection-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .collection-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      filter: brightness(85%);
+      transition: filter 0.4s ease;
+    }
+
+    .collection-card:hover img {
+      filter: brightness(100%);
+    }
+
+    /* Overlay text container */
+    .collection-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(6px);
+      transition: background 0.4s ease;
+    }
+
+    .collection-title,
+    .collection-hover {
+      position: absolute;
+      color: #000;
+      font-size: 1.4rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: opacity 0.4s ease;
+    }
+
+    .collection-title {
+      opacity: 1;
+    }
+
+    .collection-hover {
+      opacity: 0;
+    }
+
+    .collection-card:hover .collection-title {
+      opacity: 0;
+    }
+
+    .collection-card:hover .collection-hover {
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 30px 0;
+      background: #fff;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .collection-card img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div id="header" class="d-flex justify-content-between align-items-center px-4 py-3">
+    <div id="header-logo">
+      <a href="../index.html"><img src="../images/logo/sWLogoVectorWithName.png" alt="Logo" style="height: 40px;"></a>
+    </div>
+    <div id="header-nav" class="d-flex gap-4">
+      <a href="../index.html">HOME</a>
+      <a href="../about/about.html">ABOUT</a>
+      <a href="index.html" class="fw-bold">SHOP</a>
+      <!--<a href="../subscribe/subscribe.html">SUBSCRIBE</a> -->
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="container">
+    <h1>Shop Collections</h1>
+    <div class="row g-4 justify-content-center">
+
+      <!-- Women -->
+      <div class="col-md-4 col-sm-6">
+        <a href="women/women.html" class="text-decoration-none">
+          <div class="collection-card">
+            <img src="collection-covers/women.png" alt="Women Collection">
+            <div class="collection-overlay">
+              <div class="collection-title">Women</div>
+              <div class="collection-hover">View Collection →</div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Abstracts -->
+      <div class="col-md-4 col-sm-6">
+        <a href="abstracts/abstract.html" class="text-decoration-none">
+          <div class="collection-card">
+            <img src="collection-covers/abstracts.png" alt="Abstracts Collection">
+            <div class="collection-overlay">
+              <div class="collection-title">Abstracts</div>
+              <div class="collection-hover">View Collection →</div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Sarah Words -->
+      <div class="col-md-4 col-sm-6">
+        <a href="sarahwords/sarahwords.html" class="text-decoration-none">
+          <div class="collection-card">
+            <img src="collection-covers/sarahwords.jpg" alt="Sarah Words Collection Coming soon">
+            <div class="collection-overlay">
+              <div class="collection-title">Sarah Words</div>
+              <div class="collection-hover">View Collection →</div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+        <p>&copy; 2024 Sarah Woods Art. All Rights Reserved.</p>
+        <p>
+            <a href="https://instagram.com/sarahwoods_art" title="Follow on Instagram">
+                <img src="../images/socials/instagramFooterIcon.png" alt="Instagram Logo">
+            </a>
+            <a href="https://linktr.ee/sarahwoodsartist" title="Linktree">
+                <img src="../images/socials/linktreeFooterIcon.png" alt="Linktree Logo">
+            </a>
+            <a href="mailto:sarahwoodsartist@gmail.com" title="Email me">
+                <img src="../images/socials/emailFooterIcon.png" alt="Email Icon">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>
