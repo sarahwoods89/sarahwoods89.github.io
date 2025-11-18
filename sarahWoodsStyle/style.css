@@ -558,4 +558,16 @@ text-align : justify;
     }
 }
 
+.text-box {
+    text-align: center;
+}
+
+.text-box p {
+    text-align: center !important;
+}
+
+.text-box h2 {
+    text-align: center !important;
+}
+
 
