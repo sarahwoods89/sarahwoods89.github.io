@@ -533,4 +533,29 @@ text-align : justify;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+@media (max-width: 900px) {
+    .about-block {
+        flex-direction: column !important;
+    }
+
+    .about-block.reverse {
+        flex-direction: column !important;
+    }
+
+    .text-box, 
+    .image-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center;
+    }
+
+    .text-box h2 {
+        text-align: center;
+    }
+
+    .text-box p {
+        text-align: center;
+    }
+}
+
 
