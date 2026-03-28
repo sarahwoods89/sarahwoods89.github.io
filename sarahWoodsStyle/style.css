@@ -42,10 +42,10 @@ overflow-y : scroll;
 
 /* Logo Styling */
 #header-logo img {
-    max-width: 250px; /* Limit the maximum width */
-    height: auto; /* Adjust height automatically to maintain aspect ratio */
-    max-height: 100px; /* Prevent height from exceeding 100px */
-    margin: 0 auto; /* Center the image */
+    max-width: 250px;
+    height: auto;
+    max-height: 100px;
+    display: block;
 }
 
 /* header styling 
