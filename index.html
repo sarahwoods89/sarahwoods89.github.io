@@ -163,7 +163,8 @@
       transform: translateY(-5px);
     }
 
-    .collection-card-home img {
+    .collection-card-home img,
+    .collection-card-home video {
       width: 100%;
       aspect-ratio: 3/4;
       object-fit: cover;
@@ -172,7 +173,8 @@
       transition: filter 0.4s ease;
     }
 
-    .collection-card-home:hover img {
+    .collection-card-home:hover img,
+    .collection-card-home:hover video {
       filter: brightness(100%);
     }
 
@@ -300,7 +302,9 @@
 
         <a href="/shop/sarahwords/" style="text-decoration:none">
           <div class="collection-card-home">
-            <img src="shop/collection-covers/sarahWordsCover.webp" alt="Sarah Words Collection" loading="lazy">
+            <video autoplay muted loop playsinline>
+              <source src="videos/allIsWellVideo.MOV" type="video/mp4">
+            </video>
             <div class="card-label">Sarah Words</div>
           </div>
         </a>
