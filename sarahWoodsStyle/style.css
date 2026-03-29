@@ -192,8 +192,9 @@ color: #555;
 #footer a img {
 width: 30px;
 height: auto;
-transition: transform 0.2s ease;
-opacity: 0.7;
+transition: transform 0.2s ease, opacity 0.2s ease;
+opacity: 0.6;
+filter: invert(1);
 }
 
 #footer a img:hover {
