@@ -15,90 +15,88 @@
     }
 
     h1 {
-      font-weight: 500;
-      margin: 60px 0 40px;
+      font-weight: 400;
+      margin: 60px 0 50px;
       text-align: center;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
     }
 
-    .collection-card {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      border: none;
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .shop-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
       cursor: pointer;
-      transition: transform 0.4s ease;
+      transition: transform 0.3s ease;
     }
 
-    .collection-card:hover {
-      transform: translateY(-6px);
+    .shop-card:hover {
+      transform: translateY(-5px);
     }
 
-    .collection-card img {
+    .shop-card-image {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .shop-card-image img {
       width: 100%;
-      height: 300px;
+      aspect-ratio: 3/4;
       object-fit: cover;
-      filter: brightness(85%);
+      display: block;
+      filter: brightness(92%);
       transition: filter 0.4s ease;
     }
 
-    .collection-card:hover img {
+    .shop-card:hover .shop-card-image img {
       filter: brightness(100%);
     }
 
-    /* Overlay text container */
-    .collection-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(6px);
-      transition: background 0.4s ease;
+    .shop-card-body {
+      padding: 14px 4px 0;
+      text-align: left;
     }
 
-    .collection-title,
-    .collection-hover {
-      position: absolute;
-      color: #000;
-      font-size: 1.4rem;
+    .shop-card-body h3 {
+      font-size: 1rem;
       font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: opacity 0.4s ease;
+      margin: 0 0 6px;
+      letter-spacing: 0.5px;
     }
 
-    .collection-title {
-      opacity: 1;
+    .shop-card-body a {
+      font-size: 0.82rem;
+      color: #888;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 1px;
+      transition: color 0.3s, border-color 0.3s;
     }
 
-    .collection-hover {
-      opacity: 0;
-    }
-
-    .collection-card:hover .collection-title {
-      opacity: 0;
-    }
-
-    .collection-card:hover .collection-hover {
-      opacity: 1;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      padding: 30px 0;
-      background: #fff;
-      font-size: 0.9rem;
-      color: #444;
+    .shop-card-body a:hover {
+      color: #222;
+      border-color: #222;
     }
 
     @media (max-width: 768px) {
-      .collection-card img {
-        height: 220px;
+      .shop-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 16px 50px;
+      }
+
+      h1 {
+        margin: 40px 0 30px;
       }
     }
   </style>
@@ -109,81 +107,69 @@
   <div id="header" class="d-flex justify-content-between align-items-center px-4 py-3">
     <div id="header-logo">
       <a href="/">
-        <img src="../../images/logo/sWLogoVectorWithName.png" alt="Logo" class="logo">
+        <img src="../images/logo/sWLogoVectorWithName.png" alt="Logo" class="logo">
       </a>
     </div>
     <div id="header-nav" class="d-flex gap-4">
       <a href="/">HOME</a>
       <a href="/about/">ABOUT</a>
-      <a href="index.html" class="fw-bold">SHOP</a>
-      <!--<a href="../subscribe/subscribe.html">SUBSCRIBE</a> -->
+      <a href="/shop/" class="fw-bold">SHOP</a>
     </div>
   </div>
 
-  <!-- Main -->
-  <div class="container">
-    <h1>Shop Collections</h1>
-    <div class="row g-4 justify-content-center">
+  <h1>Shop Collections</h1>
 
-      <!-- Women -->
-      <div class="col-md-4 col-sm-6">
-        <a href="women/women.html" class="text-decoration-none">
-          <div class="collection-card">
-            <img src="collection-covers/women.png" alt="Women Collection" loading="lazy">
-            <div class="collection-overlay">
-              <div class="collection-title">Women</div>
-              <div class="collection-hover">View Collection →</div>
-            </div>
-          </div>
-        </a>
+  <div class="shop-grid">
+
+    <!-- Women -->
+    <a href="women/women.html" class="shop-card">
+      <div class="shop-card-image">
+        <img src="collection-covers/women.png" alt="Women Collection" loading="lazy">
       </div>
-
-      <!-- Abstracts -->
-      <div class="col-md-4 col-sm-6">
-        <a href="abstracts/abstracts.html" class="text-decoration-none">
-          <div class="collection-card">
-            <img src="collection-covers/abstracts.png" alt="Abstracts Collection" loading="lazy">
-            <div class="collection-overlay">
-              <div class="collection-title">Abstracts</div>
-              <div class="collection-hover">View Collection →</div>
-            </div>
-          </div>
-        </a>
+      <div class="shop-card-body">
+        <h3>Women</h3>
+        <a href="women/women.html">View Collection →</a>
       </div>
+    </a>
 
-      <!-- Sarah Words -->
-      <div class="col-md-4 col-sm-6">
-        <a href="sarahwords/" class="text-decoration-none">
-          <div class="collection-card">
-            <img src="collection-covers/sarahWordsCover.png" alt="Sarah Words Collection" loading="lazy">
-            <div class="collection-overlay">
-              <div class="collection-title">Sarah Words</div>
-              <div class="collection-hover">View Collection →</div>
-            </div>
-          </div>
-        </a>
+    <!-- Abstracts -->
+    <a href="abstracts/abstracts.html" class="shop-card">
+      <div class="shop-card-image">
+        <img src="collection-covers/abstracts.png" alt="Abstracts Collection" loading="lazy">
       </div>
+      <div class="shop-card-body">
+        <h3>Abstracts</h3>
+        <a href="abstracts/abstracts.html">View Collection →</a>
+      </div>
+    </a>
 
-    </div>
+    <!-- Sarah Words -->
+    <a href="sarahwords/" class="shop-card">
+      <div class="shop-card-image">
+        <img src="collection-covers/sarahWordsCover.png" alt="Sarah Words Collection" loading="lazy">
+      </div>
+      <div class="shop-card-body">
+        <h3>Sarah Words</h3>
+        <a href="sarahwords/">View Collection →</a>
+      </div>
+    </a>
+
   </div>
 
   <!-- Footer -->
   <footer id="footer">
-        <p>&copy; 2024 Sarah Woods Art. All Rights Reserved.</p>
-        <p>
-            <!-- Instagram Icon -->
-            <a href="https://instagram.com/sarahwoods_art" title="follow on Instagram">
-                <img src="../../images/socials/instagramFooterIcon.png" alt="Instagram Logo">
-            </a>
-            <!-- Linktree Icon -->
-            <a href="https://linktr.ee/sarahwoodsartist" title="Linktree">
-                <img src="../../images/socials/linktreeFooterIcon.png" alt="Lintree Logo">
-            </a>
-            <!-- The email icon -->
-            <a href="mailto:sarahwoodsartist@gmail.com" title="email me">
-                <img src="../../images/socials/emailFooterIcon.png" alt="Email Logo">
-            </a>
-        </p>
-    </footer>
+    <p>&copy; 2024 Sarah Woods Art. All Rights Reserved.</p>
+    <p>
+      <a href="https://instagram.com/sarahwoods_art" title="follow on Instagram">
+        <img src="../images/socials/instagramFooterIcon.png" alt="Instagram Logo">
+      </a>
+      <a href="https://linktr.ee/sarahwoodsartist" title="Linktree">
+        <img src="../images/socials/linktreeFooterIcon.png" alt="Linktree Logo">
+      </a>
+      <a href="mailto:sarahwoodsartist@gmail.com" title="email me">
+        <img src="../images/socials/emailFooterIcon.png" alt="Email Logo">
+      </a>
+    </p>
+  </footer>
 </body>
 </html>
