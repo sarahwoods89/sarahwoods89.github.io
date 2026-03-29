@@ -28,13 +28,17 @@
 
     .about-section-image {
       flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
+      background: #f9f9f9;
     }
 
-    .about-section-image img {
+    .about-section-image img,
+    .about-section-image video {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
     }
 
@@ -43,7 +47,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 80px 70px;
+      padding: 60px 50px;
     }
 
     .about-section-text h2 {
@@ -59,7 +63,7 @@
     .about-section-text h3 {
       font-family: 'Helvetica Neue', sans-serif;
       font-size: 2rem;
-      font-weight: 400;
+      font-weight: 300;
       margin: 0 0 20px;
       line-height: 1.3;
       color: #222;
@@ -105,7 +109,7 @@
       }
 
       .about-section-image {
-        height: 60vw;
+        width: 100%;
       }
 
       .about-section-text {
@@ -143,7 +147,10 @@
       <a href="https://thehug.xyz/artists/sarah_woods" target="_blank" class="external-link">View on HUG →</a>
     </div>
     <div class="about-section-image">
-      <img src="../images/aboutImages/wordsAboutPageImage.png" alt="Sarah Words – silk thread on Belfast linen">
+      <video autoplay muted loop playsinline>
+        <source src="../videos/sometimesYouNeed.mp4" type="video/mp4">
+        <source src="../videos/sometimesYouNeed.MOV" type="video/quicktime">
+      </video>
     </div>
   </div>
 
@@ -158,7 +165,7 @@
       <a href="https://thewoo1984.com" target="_blank" class="external-link">Visit The Woo 1984 →</a>
     </div>
     <div class="about-section-image">
-      <img src="../images/aboutImages/theWooAboutPageImage.png" alt="The Woo – apparel and accessories">
+      <img src="../images/aboutImages/theWooAboutPageImage.webp" alt="The Woo – apparel and accessories">
     </div>
   </div>
 
@@ -173,7 +180,7 @@
       <a href="https://visualartists.ie/arts-directory/directory-of-members-_/#!biz/id/6388e05af0dd0c6cb1438612/About" target="_blank" class="external-link">View VAI profile →</a>
     </div>
     <div class="about-section-image">
-      <img src="../images/aboutImages/woodsAboutPageImage.png" alt="Woods – Irish artist">
+      <img src="../images/aboutImages/woodsAboutPageImage.webp" alt="Woods – Irish artist">
     </div>
   </div>
 
