@@ -3,105 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>“Break” | Sarah Woods</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../../sarahWoodsStyle/style.css" />
+  <title>"Break" | Sarah Woods</title>
+  <link rel="stylesheet" href="../../sarahWoodsStyle/style.css">
   <link rel="icon" href="/images/logo/sWFaviconSmall.png" type="image/png">
+  <style>
+    body { font-family: 'Helvetica Neue', sans-serif; color: #222; background: #fff; }
+    .product-layout { display: flex; gap: 60px; max-width: 1100px; margin: 0 auto; padding: 40px 40px 80px; align-items: flex-start; }
+    .product-gallery { flex: 1; }
+    .main-image-wrap { border-radius: 12px; overflow: hidden; background: #f2f2f2; aspect-ratio: 1; }
+    .main-image-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.25s ease; }
+    .thumbnails { display: flex; gap: 10px; margin-top: 12px; }
+    .thumb { width: 72px; height: 72px; object-fit: cover; border-radius: 6px; cursor: pointer; opacity: 0.55; transition: opacity 0.2s ease; border: 2px solid transparent; }
+    .thumb:hover { opacity: 0.85; }
+    .thumb.active { opacity: 1; border-color: #222; }
+    .product-info { flex: 1; }
+    .product-info h2 { font-size: 1.8rem; font-weight: 400; margin: 0 0 20px; }
+    .product-info p { font-size: 0.95rem; color: #555; line-height: 1.8; margin: 0 0 14px; }
+    .product-info p strong { color: #222; }
+    .buy-options { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+    @media (max-width: 768px) {
+      .product-layout { flex-direction: column; padding: 20px 20px 60px; gap: 32px; }
+      .thumb { width: 56px; height: 56px; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
   <div id="header">
     <div id="header-logo">
-      <a href="/">
-        <img src="../../images/logo/sWLogoVectorWithName.png" alt="Logo" class="logo">
-      </a>
+      <a href="/"><img src="../../images/logo/sWLogoVectorWithName.png" alt="Logo" class="logo"></a>
     </div>
     <div id="header-nav">
       <a href="/">HOME</a>
       <a href="/about/">ABOUT</a>
       <a href="/shop/" class="fw-bold">SHOP</a>
-
-      <!--<div class="link"><a href="../../subscribe/subscribe.html">SUBSCRIBE</a></div> -->
     </div>
   </div>
 
-  <!-- Product Section -->
-  <div class="container py-5">
-    <div class="row align-items-start g-4">
+  <div class="product-layout">
 
-      <!-- Image -->
-      <div class="col-md-6">
-  <div id="waitingCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner rounded shadow-sm">
-      <div class="carousel-item active">
-        <img src="../images/women/break.png" class="d-block w-100" alt="Break – view 1">
+    <div class="product-gallery">
+      <div class="main-image-wrap">
+        <img id="mainImg" src="../images/women/break.png" alt="Break">
       </div>
-      <div class="carousel-item">
-        <img src="../images/women/breakRoom1.png" class="d-block w-100" alt="Break – view 2">
-      </div>
-      <div class="carousel-item">
-        <img src="../images/women/breakRoom2.png" class="d-block w-100" alt="Break – view 2">
+      <div class="thumbnails">
+        <img class="thumb active" src="../images/women/break.png" alt="Break">
+        <img class="thumb" src="../images/women/breakRoom1.png" alt="Break in room 1">
+        <img class="thumb" src="../images/women/breakRoom2.png" alt="Break in room 2">
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#waitingCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#waitingCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-</div>
 
-      <!-- Description and Sizes -->
-      <div class="col-md-6">
-        <a href="women.html" class="back-link">← Back to Women Collection</a>
-        <h2>Break</h2>
-        <br>
-        <p>
-          Some viewers will see a pair of knickers and immediately attach a sexual connotation.<br>
-          In fact, this painting could never be promoted on socials and was often reported and flagged for violating guidelines? Eh, it's an image of a woman sitting on a toilet with only one shoe on? C'mon now, like you haven't been there? <br>
-          <br>
-          Originally painted with memories of the women's bathrooms on nights out in the early 2000s, it reflects a space of messy craic, a safe space for bitchin' and compliments in eaqual measure, and a brief and welcomed break from the outside bar/club.<br><br>
-          This painting is a limited edition raising funds for the Dublin Rape Crisis Centre.<br>
-          50% of the profits will be donated.<br><br>
-          <strong>Limited edition of 100</strong><br>
-          50 of the 10 x 10 inch.<br>
-          50 of the 20 x 20 inch.<br>
-        </p>
-        <p><strong>Print Type:</strong> Hahnemüle fine art papers from The Copperhouse Gallery.</p>
-        <p><strong>Options:</strong></p>
-
-        <!-- Stripe Links -->
-        <a href="https://buy.stripe.com/9B6bJ1207bkPbkZ11J53O05" target="_blank" class="btn btn-buy w-50 mb-2">
-          Buy 10 x 10 – €55
-        </a>
-        <a href="https://buy.stripe.com/5kQ14neMTfB53Sx9yf53O06" target="_blank" class="btn btn-buy w-50 mb-2">
-          Buy 20 x 20 – €89
-        </a>
+    <div class="product-info">
+      <a href="women.html" class="back-link">← Back to Women Collection</a>
+      <h2>Break</h2>
+      <p>Some viewers will see a pair of knickers and immediately attach a sexual connotation. In fact, this painting could never be promoted on socials and was often reported and flagged for violating guidelines? Eh, it's an image of a woman sitting on a toilet with only one shoe on.</p>
+      <p>Originally painted with memories of the women's bathrooms on nights out in the early 2000s, it reflects a space of messy craic, a safe space for bitchin' and compliments in equal measure, and a brief and welcomed break from the outside bar.</p>
+      <p>This painting is a limited edition raising funds for the Dublin Rape Crisis Centre. 50% of the profits will be donated.</p>
+      <p>Limited edition of 100.<br>
+        50 of the 10 x 10 inch.<br>
+        50 of the 20 x 20 inch.
+      </p>
+      <p><strong>Print Type:</strong> Hahnemule fine art papers from The Copperhouse Gallery.</p>
+      <p><strong>Options:</strong></p>
+      <div class="buy-options">
+        <a href="https://buy.stripe.com/9B6bJ1207bkPbkZ11J53O05" target="_blank" class="btn-buy">Buy 10 x 10" – €55</a>
+        <a href="https://buy.stripe.com/5kQ14neMTfB53Sx9yf53O06" target="_blank" class="btn-buy">Buy 20 x 20" – €89</a>
       </div>
-
     </div>
+
   </div>
 
   <footer id="footer">
-        <p>&copy; 2024 Sarah Woods Art. All Rights Reserved.</p>
-        <p>
-            <!-- Instagram Icon -->
-            <a href="https://instagram.com/sarahwoods_art" title="follow on Instagram">
-                <img src="../../images/socials/instagramFooterIcon.png" alt="Instagram Logo">
-            </a>
-            <!-- Linktree Icon -->
-            <a href="https://linktr.ee/sarahwoodsartist" title="Linktree">
-                <img src="../../images/socials/linktreeFooterIcon.png" alt="Lintree Logo">
-            </a>
-            <!-- The email icon -->
-            <a href="mailto:sarahwoodsartist@gmail.com" title="email me">
-                <img src="../../images/socials/emailFooterIcon.png" alt="Email Logo">
-            </a>
-        </p>
-    </footer>
+    <p>&copy; 2024 Sarah Woods Art. All Rights Reserved.</p>
+    <p>
+      <a href="https://instagram.com/sarahwoods_art" title="follow on Instagram"><img src="../../images/socials/instagramFooterIcon.png" alt="Instagram Logo"></a>
+      <a href="https://linktr.ee/sarahwoodsartist" title="Linktree"><img src="../../images/socials/linktreeFooterIcon.png" alt="Linktree Logo"></a>
+      <a href="mailto:sarahwoodsartist@gmail.com" title="email me"><img src="../../images/socials/emailFooterIcon.png" alt="Email Logo"></a>
+    </p>
+  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const mainImg = document.getElementById('mainImg');
+    document.querySelectorAll('.thumb').forEach(function(thumb) {
+      thumb.addEventListener('click', function() {
+        mainImg.style.opacity = '0';
+        setTimeout(function() { mainImg.src = thumb.src; mainImg.style.opacity = '1'; }, 150);
+        document.querySelectorAll('.thumb').forEach(function(t) { t.classList.remove('active'); });
+        thumb.classList.add('active');
+      });
+    });
+  </script>
+
 </body>
 </html>
