@@ -549,6 +549,7 @@ text-align : justify;
   text-decoration: none;
   letter-spacing: 0.5px;
   padding: 20px 0 0;
+  margin-bottom: 40px;
   transition: color 0.2s ease;
 }
 
