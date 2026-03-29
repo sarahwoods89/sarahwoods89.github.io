@@ -540,6 +540,29 @@ text-align : justify;
   transform: translateY(-2px);
 }
 
+.back-link {
+  display: block;
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 0.85rem;
+  color: #888;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  padding: 20px 0 0;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #222;
+}
+
+@media (max-width: 768px) {
+  .back-link {
+    text-align: left;
+    padding-left: 4px;
+  }
+}
+
 .btn-art-black {
   display: inline-block;
   padding: 10px 22px;
