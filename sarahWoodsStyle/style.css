@@ -60,8 +60,9 @@ text-decoration : none;
 color : black; /* colour */
 padding : 10px; /* add padding to the nav header */
 }
-#header-nav a.active {
-text-decoration : underline;
+#header-nav a.active,
+#header-nav a.fw-bold {
+font-weight: 700;
 }
 
 #header-nav {
