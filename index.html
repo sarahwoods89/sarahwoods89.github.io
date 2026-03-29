@@ -206,6 +206,38 @@
       opacity: 0.5;
     }
 
+    /* ── Shorts section ── */
+    #shorts-section {
+      background: #f9f9f9;
+    }
+
+    .shorts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .shorts-grid iframe {
+      width: 100%;
+      aspect-ratio: 9/16;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .shorts-placeholder {
+      width: 100%;
+      aspect-ratio: 9/16;
+      border-radius: 12px;
+      background: #e8e8e8;
+      animation: shimmer 1.5s infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
     /* ── Mobile responsive ── */
     @media (max-width: 768px) {
       #header-nav {
@@ -226,7 +258,8 @@
         text-align: center;
       }
 
-      .collections-grid {
+      .collections-grid,
+      .shorts-grid {
         grid-template-columns: 1fr;
         gap: 16px;
       }
@@ -329,6 +362,20 @@
     </div>
   </section>
 
+  <!-- Shorts section -->
+  <section id="shorts-section">
+    <div class="page-section">
+      <p class="section-heading">Latest Shorts</p>
+      <div id="shorts-grid" class="shorts-grid">
+        <!-- Populated by YouTube API -->
+        <div class="shorts-placeholder"></div>
+        <div class="shorts-placeholder"></div>
+        <div class="shorts-placeholder"></div>
+      </div>
+      <a href="https://www.youtube.com/@sarahwords/shorts" target="_blank" class="shop-link">View all on YouTube →</a>
+    </div>
+  </section>
+
   <!-- About snippet -->
   <section id="about-section">
     <div class="about-inner">
@@ -410,6 +457,33 @@
       }
       typeWriter();
     });
+
+    // YouTube Shorts
+    (function () {
+      const API_KEY = 'AIzaSyDd5g5qP40R2l0xJvrSBZEZiYELqmDAMhQ';
+      const CHANNEL_ID = 'UCrzN18GLrCqfPTd-7Mj-lzQ';
+      const PLAYLIST_ID = 'UU' + CHANNEL_ID.slice(2);
+      const grid = document.getElementById('shorts-grid');
+
+      fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=3&key=${API_KEY}`)
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data.items || data.items.length === 0) return;
+          grid.innerHTML = data.items.map(function (item) {
+            const id = item.snippet.resourceId.videoId;
+            return `<iframe
+              src="https://www.youtube.com/embed/${id}?autoplay=0&rel=0"
+              title="${item.snippet.title}"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>`;
+          }).join('');
+        })
+        .catch(function () {
+          grid.innerHTML = '';
+        });
+    })();
 
     // Hamburger menu
     const hamburger = document.getElementById('hamburger');
