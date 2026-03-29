@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>"Flowers" | Sarah Woods</title>
+  <link rel="stylesheet" href="../../sarahWoodsStyle/style.css">
+  <link rel="icon" href="/images/logo/sWFaviconSmall.png" type="image/png">
+  <style>
+    body { font-family: 'Helvetica Neue', sans-serif; color: #222; background: #fff; }
+    .product-layout { display: flex; gap: 60px; max-width: 1100px; margin: 0 auto; padding: 40px 40px 80px; align-items: flex-start; }
+    .product-gallery { flex: 1; }
+    .main-image-wrap { border-radius: 12px; overflow: hidden; background: #f2f2f2; aspect-ratio: 1; }
+    .main-image-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.25s ease; }
+    .product-info { flex: 1; }
+    .product-info h2 { font-size: 1.8rem; font-weight: 400; margin: 0 0 20px; }
+    .product-info p { font-size: 0.95rem; color: #555; line-height: 1.8; margin: 0 0 14px; }
+    .product-info p strong { color: #222; }
+    .buy-options { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+    @media (max-width: 768px) {
+      .product-layout { flex-direction: column; padding: 20px 20px 60px; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header">
+    <div id="header-logo">
+      <a href="/"><img src="../../images/logo/sWLogoVectorWithName.png" alt="Logo" class="logo"></a>
+    </div>
+    <div id="header-nav">
+      <a href="/">HOME</a>
+      <a href="/about/">ABOUT</a>
+      <a href="/shop/" class="fw-bold">SHOP</a>
+    </div>
+  </div>
+
+  <div class="product-layout">
+
+    <div class="product-gallery">
+      <div class="main-image-wrap">
+        <img src="../images/abstracts/flowers.webp" alt="Flowers">
+      </div>
+    </div>
+
+    <div class="product-info">
+      <a href="abstracts.html" class="back-link">← Back to Abstracts Collection</a>
+      <h2>Flowers</h2>
+      <p><strong>Print Type:</strong> Hahnemule fine art papers from The Copperhouse Gallery.</p>
+      <p><strong>Options:</strong></p>
+      <div class="buy-options">
+        <a href="#" target="_blank" class="btn-buy">Buy 10 x 10" – €55</a>
+        <a href="#" target="_blank" class="btn-buy">Buy 20 x 20" – €89</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer id="footer">
+    <p>&copy; 2024 Sarah Woods Art. All Rights Reserved.</p>
+    <p>
+      <a href="https://instagram.com/sarahwoods_art" title="follow on Instagram"><img src="../../images/socials/instagramFooterIcon.png" alt="Instagram Logo"></a>
+      <a href="https://linktr.ee/sarahwoodsartist" title="Linktree"><img src="../../images/socials/linktreeFooterIcon.png" alt="Linktree Logo"></a>
+      <a href="mailto:sarahwoodsartist@gmail.com" title="email me"><img src="../../images/socials/emailFooterIcon.png" alt="Email Logo"></a>
+    </p>
+  </footer>
+
+</body>
+</html>
