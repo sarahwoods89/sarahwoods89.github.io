@@ -25,13 +25,13 @@
       border-radius: 12px;
       overflow: hidden;
       background: #f2f2f2;
-      aspect-ratio: 1;
+      
     }
 
     .main-image-wrap img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
       transition: opacity 0.25s ease;
     }
@@ -45,7 +45,7 @@
     .thumb {
       width: 72px;
       height: 72px;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 6px;
       cursor: pointer;
       opacity: 0.55;
@@ -104,6 +104,7 @@
       </div>
       <div class="thumbnails">
         <img class="thumb active" src="../images/women/waitingOn1.webp" alt="Waiting On">
+        <img class="thumb" src="../images/women/waitingOnSide.webp" alt="Waiting On side">
         <img class="thumb" src="../images/women/waitingOnRoom1.webp" alt="Waiting On in room 1">
         <img class="thumb" src="../images/women/waitingOnRoom2.webp" alt="Waiting On in room 2">
       </div>
