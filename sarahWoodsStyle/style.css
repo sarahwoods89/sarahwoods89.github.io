@@ -737,6 +737,11 @@ html.dark-mode #footer a {
   color: #888;
 }
 
+html.dark-mode #footer a img {
+  filter: invert(1);
+  opacity: 0.8;
+}
+
 html.dark-mode #main {
   background-color: #111;
 }
