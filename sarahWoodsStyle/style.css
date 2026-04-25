@@ -670,6 +670,13 @@ text-align : justify;
   #header-nav a:last-child { border-bottom: none; }
 }
 
+/* ── Header right group ── */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 /* ── Dark mode toggle button ── */
 #dark-mode-toggle {
   background: none;
