@@ -4,32 +4,15 @@
       <img src="/images/logo/sWLogoVectorWithName.png" alt="Sarah Woods Logo" class="logo">
     </a>
   </div>
-  <button id="burger-btn" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <div id="header-nav" class="d-flex gap-4">
-    <a href="/">HOME</a>
-    <a href="/about/">ABOUT</a>
-    <a href="/shop/">SHOP</a>
+  <div class="header-right d-flex align-items-center gap-3">
+    <button id="dark-mode-toggle" aria-label="Switch to dark mode">🌙</button>
+    <button id="burger-btn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div id="header-nav" class="d-flex gap-4">
+      <a href="/">HOME</a>
+      <a href="/about/">ABOUT</a>
+      <a href="/shop/">SHOP</a>
+    </div>
   </div>
 </div>
-
-<script>
-  (function () {
-    var btn = document.getElementById('burger-btn');
-    var nav = document.getElementById('header-nav');
-    if (!btn || !nav) return;
-    btn.addEventListener('click', function () {
-      var open = nav.classList.toggle('nav-open');
-      btn.setAttribute('aria-expanded', open);
-      btn.classList.toggle('burger-open', open);
-    });
-    document.addEventListener('click', function (e) {
-      if (!btn.contains(e.target) && !nav.contains(e.target)) {
-        nav.classList.remove('nav-open');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.classList.remove('burger-open');
-      }
-    });
-  })();
-</script>

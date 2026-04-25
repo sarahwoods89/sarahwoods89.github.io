@@ -670,3 +670,163 @@ text-align : justify;
   #header-nav a:last-child { border-bottom: none; }
 }
 
+/* ── Dark mode toggle button ── */
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 6px 8px;
+  line-height: 1;
+  color: #222;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+#dark-mode-toggle:hover {
+  opacity: 0.6;
+}
+
+/* ── Dark mode ── */
+html.dark-mode body {
+  background-color: #111;
+  color: #e0e0e0;
+}
+
+html.dark-mode #header {
+  background-color: #111 !important;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+html.dark-mode #header,
+html.dark-mode #header-nav,
+html.dark-mode #header-nav .nav-item .nav-link {
+  color: #e0e0e0 !important;
+}
+
+html.dark-mode #header-nav a {
+  color: #e0e0e0 !important;
+}
+
+html.dark-mode #header-logo img {
+  filter: invert(1);
+}
+
+html.dark-mode #burger-btn span {
+  background: #e0e0e0;
+}
+
+html.dark-mode #dark-mode-toggle {
+  color: #e0e0e0;
+}
+
+html.dark-mode #footer {
+  background-color: #0a0a0a;
+  border-top: 1px solid #2a2a2a;
+  color: #888;
+}
+
+html.dark-mode #footer a {
+  color: #888;
+}
+
+html.dark-mode #main {
+  background-color: #111;
+}
+
+html.dark-mode .imageContainer {
+  background-color: #111;
+}
+
+html.dark-mode .text-box {
+  background-color: rgba(30, 30, 30, 0.95);
+}
+
+html.dark-mode .text-box h2,
+html.dark-mode .text-box p {
+  color: #e0e0e0;
+}
+
+html.dark-mode .shop-card-body h3,
+html.dark-mode .shop-card-body {
+  color: #e0e0e0;
+}
+
+html.dark-mode .view-link {
+  color: #aaa;
+  border-color: #555;
+}
+
+html.dark-mode .shop-card:hover .view-link {
+  color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+
+html.dark-mode .product-title {
+  color: #e0e0e0;
+}
+
+html.dark-mode .section-heading {
+  color: #888;
+}
+
+html.dark-mode #shorts-section {
+  background: #1a1a1a;
+}
+
+html.dark-mode .shop-link {
+  color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+
+html.dark-mode .back-link {
+  color: #888;
+}
+
+html.dark-mode .back-link:hover {
+  color: #e0e0e0;
+}
+
+html.dark-mode .btn-buy {
+  border-color: #e0e0e0;
+  color: #e0e0e0;
+}
+
+html.dark-mode .btn-buy:hover {
+  background: #e0e0e0;
+  color: #111;
+}
+
+html.dark-mode .btn-art-black {
+  background: #e0e0e0;
+  color: #111;
+  border-color: #e0e0e0;
+}
+
+html.dark-mode .introText p,
+html.dark-mode .introTextSwords {
+  color: #ccc;
+}
+
+html.dark-mode #typewriter {
+  color: #aaa;
+  border-right-color: #aaa;
+}
+
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3 {
+  color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  html.dark-mode #header-nav {
+    background: #111 !important;
+    border-top: 1px solid #2a2a2a;
+  }
+
+  html.dark-mode #header-nav a {
+    border-bottom: 1px solid #2a2a2a;
+  }
+}
+
