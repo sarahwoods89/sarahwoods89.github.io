@@ -738,8 +738,8 @@ html.dark-mode #footer a {
 }
 
 html.dark-mode #footer a img {
-  filter: invert(1);
-  opacity: 1;
+  filter: none !important;
+  opacity: 1 !important;
 }
 
 html.dark-mode #footer {
