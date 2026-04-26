@@ -739,7 +739,29 @@ html.dark-mode #footer a {
 
 html.dark-mode #footer a img {
   filter: invert(1);
-  opacity: 0.8;
+  opacity: 1;
+}
+
+html.dark-mode #footer {
+  color: #ccc;
+}
+
+html.dark-mode #footer p,
+html.dark-mode #footer a:not(:has(img)) {
+  color: #ccc;
+}
+
+html.dark-mode .product-info p,
+html.dark-mode .product-info blockquote {
+  color: #ccc;
+}
+
+html.dark-mode .product-info p strong {
+  color: #fff;
+}
+
+html.dark-mode .product-info h2 {
+  color: #f0f0f0;
 }
 
 html.dark-mode #main {
