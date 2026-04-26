@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support – Sarah Woods</title>
+  <link rel="stylesheet" href="../sarahWoodsStyle/style.css">
+  <link rel="icon" href="/images/logo/sWFaviconSmall.png" type="image/png">
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #fff;
+      color: #222;
+      margin: 0;
+    }
+
+    .support-wrap {
+      max-width: 780px;
+      margin: 80px auto 100px;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .support-wrap h1 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin: 0 0 20px;
+    }
+
+    .support-wrap .intro {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.85;
+      max-width: 560px;
+      margin: 0 auto 60px;
+    }
+
+    .tiers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .tier {
+      border: 1px solid #e8e8e8;
+      border-radius: 16px;
+      padding: 36px 24px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tier:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    }
+
+    .tier-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #222;
+    }
+
+    .tier-price {
+      font-size: 2rem;
+      font-weight: 300;
+      color: #222;
+      line-height: 1;
+    }
+
+    .tier-price span {
+      font-size: 0.9rem;
+      color: #999;
+      font-weight: 400;
+    }
+
+    .tier-desc {
+      font-size: 0.88rem;
+      color: #777;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .tier .btn-buy {
+      margin-top: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .support-note {
+      margin-top: 48px;
+      font-size: 0.82rem;
+      color: #bbb;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .tiers {
+        grid-template-columns: 1fr;
+        max-width: 340px;
+        margin: 0 auto;
+      }
+
+      .support-wrap {
+        margin: 50px auto 70px;
+      }
+
+      .support-wrap h1 {
+        font-size: 1.4rem;
+      }
+    }
+
+    html.dark-mode .tier {
+      border-color: #2a2a2a;
+    }
+
+    html.dark-mode .tier:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    html.dark-mode .tier-name,
+    html.dark-mode .tier-price {
+      color: #e0e0e0;
+    }
+
+    html.dark-mode .support-wrap h1 {
+      color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <div class="support-wrap">
+
+    <h1>Support My Work</h1>
+
+    <p class="intro">If my work has made you feel something — a laugh, a thought, a moment of recognition — you can help me keep making it. Once a month, for the price of a coffee.</p>
+
+    <div class="tiers">
+
+      <div class="tier">
+        <div class="tier-name">A Cup of Coffee</div>
+        <div class="tier-price">€4 <span>/ month</span></div>
+        <p class="tier-desc">The classic. Keeps me caffeinated and at the canvas.</p>
+        <a href="https://buy.stripe.com/fZudR92073Snexb25N53O0c" target="_blank" class="btn-buy">Subscribe</a>
+      </div>
+
+      <div class="tier">
+        <div class="tier-name">Two Cups — Feeding the Addiction</div>
+        <div class="tier-price">€8 <span>/ month</span></div>
+        <p class="tier-desc">Two coffees a month. You clearly have excellent taste.</p>
+        <a href="https://buy.stripe.com/3cI00jeMTagL60FaCj53O0d" target="_blank" class="btn-buy">Subscribe</a>
+      </div>
+
+      <div class="tier">
+        <div class="tier-name">Ah Here, Who's the Billionaire?</div>
+        <div class="tier-price">€16 <span>/ month</span></div>
+        <p class="tier-desc">Absolutely spoiling me. I'll think of you fondly every time I pick up a brush.</p>
+        <a href="https://buy.stripe.com/8x28wP34bfB574JdOv53O0e" target="_blank" class="btn-buy">Subscribe</a>
+      </div>
+
+    </div>
+
+    <p class="support-note">You can cancel any time. No hard feelings — genuinely.</p>
+
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="/sarahWoodsStyle/include.js"></script>
+</body>
+</html>
