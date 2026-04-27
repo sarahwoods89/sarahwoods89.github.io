@@ -27,7 +27,7 @@
 
   function setActiveNav() {
     var path = window.location.pathname;
-    var navLinks = document.querySelectorAll('#header-nav a');
+    var navLinks = document.querySelectorAll('#header-nav > a, #header-nav > .has-dropdown > a');
     navLinks.forEach(function (a) {
       a.classList.remove('fw-bold');
       var href = a.getAttribute('href');

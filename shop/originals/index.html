@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Originals | Sarah Woods</title>
+  <link rel="stylesheet" href="../../sarahWoodsStyle/style.css">
+  <link rel="icon" href="/images/logo/sWFaviconSmall.png" type="image/png">
+  <style>
+    h1 {
+      font-weight: 500;
+      margin: 20px 0 20px;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      box-sizing: border-box;
+    }
+
+    .coming-soon {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      text-align: center;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.95rem;
+      color: #999;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .collection-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 16px 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <a href="/shop/" class="back-link">← Back to Shop</a>
+  <h1>Originals</h1>
+
+  <div class="coming-soon">
+    <p>Original paintings available soon.</p>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="/sarahWoodsStyle/include.js"></script>
+</body>
+</html>
