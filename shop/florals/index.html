@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Abstracts Collection | Sarah Woods</title>
+  <title>Florals Collection | Sarah Woods</title>
   <link rel="stylesheet" href="../../sarahWoodsStyle/style.css">
   <link rel="icon" href="/images/logo/sWFaviconSmall.png" type="image/png">
   <style>
@@ -59,11 +59,6 @@
       top: 0; left: 0;
       width: 100%; height: 100%;
       object-fit: cover;
-      opacity: 0;
-      transition: opacity 0.6s ease;
-    }
-
-    .art-card-image img.active {
       opacity: 1;
     }
 
@@ -104,34 +99,6 @@
       color: #999;
       margin: 0;
     }
-
-    .image-dots {
-      position: absolute;
-      bottom: 44px;
-      left: 0; right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 5px;
-      z-index: 2;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .art-card:hover .image-dots {
-      opacity: 1;
-    }
-
-    .image-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.3);
-      transition: background 0.3s ease;
-    }
-
-    .image-dot.active {
-      background: #222;
-    }
   </style>
 </head>
 <body>
@@ -139,65 +106,27 @@
   <div id="site-header"></div>
 
   <a href="/shop/" class="back-link">← Back to Shop</a>
-  <h1>Abstracts Collection</h1>
+  <h1>Florals</h1>
 
   <div class="collection-grid">
 
-    <!-- Sliding Souls -->
+    <!-- On the Hill -->
     <div class="art-card">
-          <a href="slidingSouls.html">
-            <div class="art-card-image">
-              <img src="../images/abstracts/slidingSouls.png" class="active" alt="Sliding Souls">
-              <img src="../images/abstracts/slidingSoulsRoom1.png" alt="Sliding Souls in room">
-              <img src="../images/abstracts/slidingSoulsRoom2.png" alt="Sliding Souls in room 2">
-              <div class="image-dots">
-                <div class="image-dot active"></div>
-                <div class="image-dot"></div>
-                <div class="image-dot"></div>
-              </div>
-              <div class="art-card-overlay">View Details →</div>
-            </div>
-            <div class="art-card-body">
-              <h5>Sliding Souls</h5>
-              <p>From €89</p>
-            </div>
-          </a>
+      <a href="../abstracts/flowers.html">
+        <div class="art-card-image">
+          <img src="../images/abstracts/onTheHill.jpg" alt="On the Hill">
+          <div class="art-card-overlay">View Details →</div>
+        </div>
+        <div class="art-card-body">
+          <h5>On the Hill</h5>
+          <p>From €65</p>
+        </div>
+      </a>
     </div>
-
 
   </div>
 
   <div id="site-footer"></div>
-
-  <script>
-    document.querySelectorAll('.art-card-image').forEach(function (stack) {
-      const imgs = stack.querySelectorAll('img');
-      const dots = stack.querySelectorAll('.image-dot');
-      if (imgs.length <= 1) return;
-
-      let timer = null;
-      let current = 0;
-
-      function goTo(index) {
-        imgs[current].classList.remove('active');
-        if (dots[current]) dots[current].classList.remove('active');
-        current = index % imgs.length;
-        imgs[current].classList.add('active');
-        if (dots[current]) dots[current].classList.add('active');
-      }
-
-      stack.addEventListener('mouseenter', function () {
-        timer = setInterval(function () {
-          goTo(current + 1);
-        }, 900);
-      });
-
-      stack.addEventListener('mouseleave', function () {
-        clearInterval(timer);
-        goTo(0);
-      });
-    });
-  </script>
 
   <script src="/sarahWoodsStyle/include.js"></script>
 </body>
