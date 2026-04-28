@@ -969,10 +969,7 @@ html.dark-mode h3 {
   position: relative;
 }
 
-.shop-card-image::after,
-.art-card-image::after,
-.main-image-wrap::after,
-.collection-card-home::after {
+.main-image-wrap::after {
   content: '';
   position: absolute;
   inset: 0;
