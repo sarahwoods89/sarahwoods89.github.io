@@ -962,3 +962,30 @@ html.dark-mode h3 {
   }
 }
 
+/* ── Artwork watermark ── */
+.shop-card-image,
+.art-card-image,
+.main-image-wrap {
+  position: relative;
+}
+
+.shop-card-image::after,
+.art-card-image::after,
+.main-image-wrap::after,
+.collection-card-home::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Ctext x='110' y='110' font-family='Helvetica Neue,sans-serif' font-size='13' font-weight='300' fill='rgba(255,255,255,0.4)' text-anchor='middle' dominant-baseline='middle' transform='rotate(-30,110,110)' letter-spacing='3'%3ESARAH WOODS%3C/text%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 220px 220px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Keep hover overlays above the watermark */
+.art-card-overlay,
+.collection-card-home .card-label {
+  z-index: 3;
+}
+
