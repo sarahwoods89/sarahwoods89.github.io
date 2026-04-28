@@ -718,12 +718,40 @@ html.dark-mode .dropdown a:hover {
     z-index: 1050;
   }
   #header-nav.nav-open { display: flex !important; }
-  #header-nav a {
+  #header-nav > a, #header-nav .has-dropdown > a {
     padding: 14px 24px !important;
     font-size: 13px !important;
     border-bottom: 1px solid #f2f2f2;
   }
-  #header-nav a:last-child { border-bottom: none; }
+
+  /* SHOP sub-items expand inline instead of floating */
+  #header-nav .has-dropdown {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  #header-nav .dropdown {
+    display: block !important;
+    position: static !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    background: #f8f8f8;
+    width: 100%;
+  }
+  #header-nav .dropdown a {
+    padding: 12px 24px 12px 40px !important;
+    font-size: 11px !important;
+    color: #999 !important;
+    border-bottom: 1px solid #efefef !important;
+    white-space: normal;
+  }
+  #header-nav .dropdown a:last-child {
+    border-bottom: 1px solid #f2f2f2 !important;
+  }
 }
 
 /* ── Header right group ── */
@@ -915,8 +943,22 @@ html.dark-mode h3 {
     border-top: 1px solid #2a2a2a;
   }
 
-  html.dark-mode #header-nav a {
+  html.dark-mode #header-nav > a,
+  html.dark-mode #header-nav .has-dropdown > a {
     border-bottom: 1px solid #2a2a2a;
+  }
+
+  html.dark-mode #header-nav .dropdown {
+    background: #1a1a1a !important;
+  }
+
+  html.dark-mode #header-nav .dropdown a {
+    color: #aaa !important;
+    border-bottom: 1px solid #2a2a2a !important;
+  }
+
+  html.dark-mode #header-nav .dropdown a:last-child {
+    border-bottom: 1px solid #2a2a2a !important;
   }
 }
 
