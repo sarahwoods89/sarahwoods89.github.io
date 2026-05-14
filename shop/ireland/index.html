@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ireland Collection | Sarah Woods</title>
+  <link rel="stylesheet" href="../../sarahWoodsStyle/style.css">
+  <link rel="icon" href="/images/logo/sWFaviconSmall.png" type="image/png">
+  <style>
+    h1 {
+      font-weight: 500;
+      margin: 20px 0 40px;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 768px) {
+      .collection-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 16px 50px;
+      }
+    }
+
+    .art-card a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .art-card {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .art-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .art-card-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      aspect-ratio: 1;
+      background: #f2f2f2;
+    }
+
+    .art-card-image img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 1;
+    }
+
+    .art-card-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(255, 255, 255, 0.88);
+      padding: 12px;
+      text-align: center;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .art-card:hover .art-card-overlay {
+      opacity: 1;
+    }
+
+    .art-card-body {
+      padding: 14px 2px 0;
+      text-align: left;
+    }
+
+    .art-card-body h5 {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin: 0 0 4px;
+      color: #222;
+    }
+
+    .art-card-body p {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.85rem;
+      color: #999;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <a href="/shop/" class="back-link">← Back to Shop</a>
+  <h1>Ireland</h1>
+
+  <div class="collection-grid">
+
+    <div class="art-card">
+      <a href="emeraldEire.html">
+        <div class="art-card-image">
+          <img src="../images/ireland/emeraldEire.jpg" alt="Emerald Eire">
+          <div class="art-card-overlay">View Details →</div>
+        </div>
+        <div class="art-card-body">
+          <h5>Emerald Eire</h5>
+          <p>Limited edition</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="art-card">
+      <a href="weAreFrom.html">
+        <div class="art-card-image">
+          <img src="../images/ireland/weAreFrom.jpg" alt="We're From">
+          <div class="art-card-overlay">View Details →</div>
+        </div>
+        <div class="art-card-body">
+          <h5>We're From</h5>
+          <p>Open edition</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="art-card">
+      <a href="coisir.html">
+        <div class="art-card-image">
+          <img src="../images/ireland/coisir.jpg" alt="Cóisir">
+          <div class="art-card-overlay">View Details →</div>
+        </div>
+        <div class="art-card-body">
+          <h5>Cóisir</h5>
+          <p>Open edition</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="/sarahWoodsStyle/include.js"></script>
+</body>
+</html>
