@@ -292,14 +292,20 @@
     </div>
   </section>
 
-  <!-- Instagram section -->
-  <section id="instagram-section">
+  <!-- YouTube Shorts section -->
+  <section id="shorts-section">
     <div class="page-section">
-      <p class="section-heading">Follow Along</p>
-      <p style="text-align:center; color:#888; font-size:0.95rem; margin: -16px 0 32px;">Behind the scenes, work in progress and the odd bit of craic.</p>
-      <div style="text-align:center;">
-        <a href="https://www.instagram.com/sarahwoods_art" target="_blank" rel="noopener" class="shop-link">Follow @sarahwoods_art on Instagram →</a>
+      <p class="section-heading">Latest on YouTube</p>
+      <div id="shorts-grid" class="shorts-grid">
+        <div class="shorts-placeholder"></div>
+        <div class="shorts-placeholder"></div>
+        <div class="shorts-placeholder"></div>
       </div>
+      <a href="https://www.youtube.com/@sarahwords/shorts" target="_blank" rel="noopener" class="shop-link">View all on YouTube →</a>
+      <p style="text-align:center; margin-top:32px; font-size:0.88rem; color:#999;">
+        Also on Instagram &mdash;
+        <a href="https://www.instagram.com/sarahwoods_art" target="_blank" rel="noopener" style="color:#666; text-decoration:none; border-bottom:1px solid #ddd; padding-bottom:1px;">@sarahwoods_art</a>
+      </p>
     </div>
   </section>
 
@@ -355,6 +361,33 @@
       typeWriter();
     });
 
+
+    // YouTube Shorts
+    (function () {
+      const API_KEY = 'AIzaSyDd5g5qP40R2l0xJvrSBZEZiYELqmDAMhQ';
+      const CHANNEL_ID = 'UCrzN18GLrCqfPTd-7Mj-lzQ';
+      const PLAYLIST_ID = 'UU' + CHANNEL_ID.slice(2);
+      const grid = document.getElementById('shorts-grid');
+
+      fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=3&key=${API_KEY}`)
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data.items || data.items.length === 0) return;
+          grid.innerHTML = data.items.map(function (item) {
+            const id = item.snippet.resourceId.videoId;
+            return `<iframe
+              src="https://www.youtube.com/embed/${id}?autoplay=0&rel=0"
+              title="${item.snippet.title}"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>`;
+          }).join('');
+        })
+        .catch(function () {
+          grid.innerHTML = '';
+        });
+    })();
 
     // Hamburger menu
     const hamburger = document.getElementById('hamburger');
