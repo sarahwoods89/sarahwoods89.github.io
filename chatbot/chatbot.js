@@ -96,7 +96,7 @@
     'What\'s your return policy?'
   ];
 
-  var GREETING = 'Hi! I\'m Sarah\'s FAQ assistant. Ask me anything about prints, shipping, or orders — or tap a question below to get started.';
+  var GREETING = 'Hi! I\'m Sarah\'s virtual assistant. Ask me anything about prints, shipping, or orders, or tap a question below to get started.';
   var FALLBACK  = 'I\'m not sure about that one! For anything I can\'t answer, you can reach Sarah directly at <a href="mailto:sarahwoodsartist@gmail.com" style="color:inherit;font-weight:500">sarahwoodsartist@gmail.com</a> or via the <a href="/contact/" style="color:inherit;font-weight:500">Contact page</a>.';
 
   /* ─── FAQ MATCHING ─────────────────────────────────────────── */
@@ -175,6 +175,11 @@
     'html.dark-mode #sw-irow{background:#1c1c1c;border-top-color:#2e2e2e}',
     'html.dark-mode #sw-input{background:#252525;color:#e0e0e0;border-color:#3a3a3a}',
     'html.dark-mode #sw-input:focus{border-color:#666;background:#2a2a2a}',
+    '.sw-followup{font-size:.75rem;color:#999;font-family:"Helvetica Neue",Arial,sans-serif;text-align:left;padding:0 2px 4px}',
+    '.sw-followup a{color:#999;text-decoration:underline}',
+    '.sw-followup a:hover{color:#555}',
+    'html.dark-mode .sw-followup,.sw-followup a{color:#666}',
+    'html.dark-mode .sw-followup a:hover{color:#999}',
     '@media(max-width:420px){#sw-win{width:calc(100vw - 20px);right:10px;bottom:82px}#sw-bubble{bottom:16px;right:16px}}'
   ].join('');
   document.head.appendChild(styleEl);
@@ -236,6 +241,11 @@
     setTimeout(function () {
       dots.remove();
       addMsg(findAnswer(question) || FALLBACK, 'bot');
+      var followUp = document.createElement('div');
+      followUp.className = 'sw-followup';
+      followUp.innerHTML = 'Not quite the answer you needed? <a href="mailto:sarahwoodsartist@gmail.com">Email us</a> and Sarah will get back to you.';
+      msgsEl.appendChild(followUp);
+      msgsEl.scrollTop = msgsEl.scrollHeight;
     }, 650);
   }
 
