@@ -71,4 +71,8 @@
 
   injectPartial('site-header', '/partials/header.html', setActiveNav);
   injectPartial('site-footer', '/partials/footer.html');
+
+  var chatScript = document.createElement('script');
+  chatScript.src = '/chatbot/chatbot.js';
+  document.body.appendChild(chatScript);
 })();
