@@ -33,9 +33,9 @@
       tags: ['limited', 'edition', 'numbered', '50', 'sold out']
     },
     {
-      q: 'what sizes are available print size dimensions measurements',
-      a: 'Print sizes vary by collection and design. Each product page in the <a href="/shop/" style="color:inherit;font-weight:500">Shop</a> shows the available sizes and prices. Feel free to reach out if you have a specific size in mind.',
-      tags: ['size', 'sizes', 'dimension', 'measurement', 'large', 'small', 'format', 'cm', 'inch']
+      q: 'what sizes are available print size dimensions measurements how big how small',
+      a: 'Our smallest print is 10 x 10 inches, and our largest is A1 — though A1 is only available for a small number of Emerald Eire prints. Sizes vary across collections, so the best place to check is each individual collection in the <a href="/shop/" style="color:inherit;font-weight:500">Shop</a>.',
+      tags: ['size', 'sizes', 'dimension', 'measurement', 'large', 'small', 'format', 'cm', 'inch', 'a1', 'a2', 'a3', 'big']
     },
     {
       q: 'payment methods accepted how do I pay card checkout',
