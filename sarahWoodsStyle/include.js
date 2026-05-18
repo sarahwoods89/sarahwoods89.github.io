@@ -75,4 +75,17 @@
   var chatScript = document.createElement('script');
   chatScript.src = '/chatbot/chatbot.js';
   document.body.appendChild(chatScript);
+
+  // Hide watermark when an interior/room image is shown in the main viewer
+  (function () {
+    var mainImg = document.getElementById('mainImg');
+    if (!mainImg) return;
+    var wrap = mainImg.parentElement;
+    function checkWatermark() {
+      var isInterior = /interior|room/i.test(mainImg.src);
+      wrap.classList.toggle('no-watermark', isInterior);
+    }
+    new MutationObserver(checkWatermark).observe(mainImg, { attributes: true, attributeFilter: ['src'] });
+    checkWatermark();
+  })();
 })();
