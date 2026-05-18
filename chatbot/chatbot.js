@@ -24,8 +24,8 @@
     },
     {
       q: 'return policy can I return my order refund exchange damaged wrong',
-      a: 'Returns are accepted within 14 days of delivery if your print arrives damaged or faulty. Please email me at <a href="mailto:sarahwoodsartist@gmail.com" style="color:inherit;font-weight:500">sarahwoodsartist@gmail.com</a> with a photo of the issue and your order details.',
-      tags: ['return', 'refund', 'exchange', 'damaged', 'policy', 'wrong', 'broken', 'fault']
+      a: 'We don\'t accept returns for change of mind, but if your print arrives damaged or there\'s an issue with your order, get in touch within 14 days and we\'ll make it right. Email us at <a href="mailto:hello@sarahwoods.xyz" style="color:inherit;font-weight:500">hello@sarahwoods.xyz</a> with a photo and your order details.',
+      tags: ['return', 'refund', 'exchange', 'damaged', 'policy', 'wrong', 'broken', 'fault', 'change of mind']
     },
     {
       q: 'are prints limited edition how many per edition numbered sold out',
@@ -83,9 +83,9 @@
       tags: ['frame', 'framed', 'framing', 'unframed', 'mount']
     },
     {
-      q: 'can I pay in installments split the cost payment plan finance',
-      a: 'Yes! We offer Klarna at checkout, which lets you split the cost into 3 installments. Your print will be posted within the normal timeframe — you don\'t need to complete all 3 payments before it ships.',
-      tags: ['installment', 'installments', 'klarna', 'split', 'finance', 'plan', 'later', 'monthly', 'deposit']
+      q: 'can I pay in installments split the cost payment plan finance klarna',
+      a: 'Yes! We offer Klarna at checkout, which lets you split the cost into 3 installments. Your print is sent out as normal once we receive your order — you don\'t need to complete all 3 payments before it ships. We aim to get every print out within 2 working days.',
+      tags: ['installment', 'installments', 'klarna', 'split', 'finance', 'plan', 'later', 'monthly', 'deposit', 'pay later']
     }
   ];
 
