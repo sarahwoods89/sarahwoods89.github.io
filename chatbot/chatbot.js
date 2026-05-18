@@ -34,7 +34,7 @@
     },
     {
       q: 'what sizes are available print size dimensions measurements how big how small',
-      a: 'Our smallest print is 10 x 10 inches, and our largest is A1 — though A1 is only available for a small number of Emerald Eire prints. Sizes vary across collections, so the best place to check is each individual collection in the <a href="/shop/" style="color:inherit;font-weight:500">Shop</a>.',
+      a: 'Our smallest print is 10 x 10 inches, and our largest is A1, though A1 is only available for a small number of Emerald Eire prints. Sizes vary across collections, so the best place to check is each individual collection in the <a href="/shop/" style="color:inherit;font-weight:500">Shop</a>.',
       tags: ['size', 'sizes', 'dimension', 'measurement', 'large', 'small', 'format', 'cm', 'inch', 'a1', 'a2', 'a3', 'big']
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       q: 'custom orders commission painting request personalised bespoke',
-      a: 'Custom commissions aren\'t available right now — I\'m focused on my existing collections. Follow me on Instagram (<a href="https://instagram.com/sarahwoods_art" target="_blank" style="color:inherit;font-weight:500">@sarahwoods_art</a>) to be the first to know if that changes!',
+      a: 'Custom commissions aren\'t available right now. I\'m focused on my existing collections. Follow me on Instagram (<a href="https://instagram.com/sarahwoods_art" target="_blank" style="color:inherit;font-weight:500">@sarahwoods_art</a>) to be the first to know if that changes!',
       tags: ['custom', 'commission', 'personalised', 'bespoke', 'request', 'specific']
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       q: 'ireland collection emerald eire prints irish',
-      a: 'The Ireland Collection features prints inspired by the beauty of Ireland — including Emerald Eire, We\'re From, and Cóisir. Browse it in the <a href="/shop/ireland/" style="color:inherit;font-weight:500">Shop</a>.',
+      a: 'The Ireland Collection features prints inspired by the beauty of Ireland, including Emerald Eire, We\'re From, and Cóisir. Browse it in the <a href="/shop/ireland/" style="color:inherit;font-weight:500">Shop</a>.',
       tags: ['ireland', 'irish', 'collection', 'emerald', 'eire', 'coisir']
     },
     {
@@ -84,7 +84,7 @@
     },
     {
       q: 'can I pay in installments split the cost payment plan finance klarna',
-      a: 'Yes! We offer Klarna at checkout, which lets you split the cost into 3 installments. Your print is sent out as normal once we receive your order — you don\'t need to complete all 3 payments before it ships. We aim to get every print out within 2 working days.',
+      a: 'Yes! We offer Klarna at checkout, which lets you split the cost into 3 installments. Your print is sent out as normal once we receive your order. You don\'t need to complete all 3 payments before it ships. We aim to get every print out within 2 working days.',
       tags: ['installment', 'installments', 'klarna', 'split', 'finance', 'plan', 'later', 'monthly', 'deposit', 'pay later']
     }
   ];
@@ -146,7 +146,7 @@
     '#sw-bubble{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#111;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:9100;box-shadow:0 4px 20px rgba(0,0,0,.22);transition:transform .2s,box-shadow .2s}',
     '#sw-bubble:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(0,0,0,.3)}',
     '#sw-bubble svg{pointer-events:none}',
-    '#sw-win{position:fixed;bottom:92px;right:24px;width:340px;max-height:540px;background:#fff;border:1px solid #e4e4e4;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.14);z-index:9099;display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(16px) scale(.97);pointer-events:none;transition:opacity .22s,transform .22s}',
+    '#sw-win{position:fixed;bottom:92px;right:24px;width:340px;max-height:540px;background:#fff;border:1px solid #e4e4e4;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.14);z-index:9099;display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(16px) scale(.97);pointer-events:none;transition:opacity .22s,transform .22s;text-align:left}',
     '#sw-win.sw-open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}',
     '#sw-head{background:#111;color:#fff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}',
     '#sw-head-title{font-family:"Helvetica Neue",Arial,sans-serif;font-size:.85rem;font-weight:500;letter-spacing:.4px}',
