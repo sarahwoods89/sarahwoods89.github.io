@@ -68,9 +68,9 @@
       tags: ['track', 'tracking', 'order', 'status', 'shipment', 'number']
     },
     {
-      q: 'what are prints made from paper material quality archival',
-      a: 'Prints are produced on high-quality fine art paper. Full material details are listed on each product page in the Shop.',
-      tags: ['material', 'paper', 'quality', 'made', 'medium', 'archival']
+      q: 'what paper are your art prints printed on material quality made from',
+      a: 'Our prints at The Copper House are made to stand the test of time. We print onto a curated selection of certified Hahnemühle fine art papers. This choice of paper adds an extra layer of texture and quality to the final print.',
+      tags: ['paper', 'material', 'quality', 'made', 'medium', 'archival', 'hahnemuhle', 'printed', 'texture']
     },
     {
       q: 'price how much does a print cost pricing euro',
