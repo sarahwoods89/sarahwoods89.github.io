@@ -18,9 +18,9 @@
       tags: ['ship', 'international', 'worldwide', 'delivery', 'abroad', 'overseas', 'countries']
     },
     {
-      q: 'how long does shipping take delivery time dispatch days weeks',
-      a: 'Prints are dispatched within 3–5 business days. Delivery typically takes 3–5 days within Ireland and the UK, 5–10 days for Europe, and 7–14 days for the rest of the world.',
-      tags: ['shipping', 'delivery', 'time', 'long', 'dispatch', 'arrive', 'days', 'weeks', 'when']
+      q: 'how long does shipping take delivery time how quickly can I get my print dispatch days weeks',
+      a: 'Please allow 2 working days for Sarah to collect and prepare your print, then add your chosen delivery time on top of that. The shipping options at checkout are:<br><br>• <strong>Ireland:</strong> 1–3 business days (€9)<br>• <strong>EU / UK:</strong> 4–7 business days (€15)<br>• <strong>Worldwide standard:</strong> 7–14 business days (€20)<br>• <strong>Worldwide express:</strong> 5–7 business days (€36)<br><br>All orders are tracked.',
+      tags: ['shipping', 'delivery', 'time', 'long', 'dispatch', 'arrive', 'days', 'weeks', 'when', 'quickly', 'fast', 'soon', 'tracked']
     },
     {
       q: 'return policy can I return my order refund exchange damaged wrong',
