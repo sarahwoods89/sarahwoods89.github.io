@@ -76,6 +76,30 @@
   chatScript.src = '/chatbot/chatbot.js';
   document.body.appendChild(chatScript);
 
+  // Hover image cycling on collection cards
+  document.querySelectorAll('[data-hover-images]').forEach(function (img) {
+    var extras = img.getAttribute('data-hover-images').split(',');
+    var all = [img.getAttribute('src')].concat(extras);
+    var idx = 0;
+    var timer = null;
+    var card = img.closest('.art-card-image, .shop-card-image') || img.parentElement;
+
+    card.addEventListener('mouseenter', function () {
+      idx = 0;
+      timer = setInterval(function () {
+        idx = (idx + 1) % all.length;
+        img.style.opacity = '0';
+        setTimeout(function () { img.src = all[idx]; img.style.opacity = '1'; }, 150);
+      }, 1400);
+    });
+
+    card.addEventListener('mouseleave', function () {
+      clearInterval(timer);
+      img.style.opacity = '0';
+      setTimeout(function () { img.src = all[0]; img.style.opacity = '1'; }, 150);
+    });
+  });
+
   // Hide watermark when an interior/room image is shown in the main viewer
   (function () {
     var mainImg = document.getElementById('mainImg');
