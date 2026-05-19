@@ -84,19 +84,34 @@
     var timer = null;
     var card = img.closest('.art-card-image, .shop-card-image') || img.parentElement;
 
+    img.style.transition = 'transform 0.35s ease, opacity 0.35s ease';
+
+    function slideTo(newSrc) {
+      img.style.transform = 'translateX(-18px)';
+      img.style.opacity = '0';
+      setTimeout(function () {
+        img.src = newSrc;
+        img.style.transition = 'none';
+        img.style.transform = 'translateX(18px)';
+        img.style.opacity = '0';
+        img.offsetWidth;
+        img.style.transition = 'transform 0.35s ease, opacity 0.35s ease';
+        img.style.transform = 'translateX(0)';
+        img.style.opacity = '1';
+      }, 200);
+    }
+
     card.addEventListener('mouseenter', function () {
       idx = 0;
       timer = setInterval(function () {
         idx = (idx + 1) % all.length;
-        img.style.opacity = '0';
-        setTimeout(function () { img.src = all[idx]; img.style.opacity = '1'; }, 150);
-      }, 1400);
+        slideTo(all[idx]);
+      }, 1600);
     });
 
     card.addEventListener('mouseleave', function () {
       clearInterval(timer);
-      img.style.opacity = '0';
-      setTimeout(function () { img.src = all[0]; img.style.opacity = '1'; }, 150);
+      slideTo(all[0]);
     });
   });
 
