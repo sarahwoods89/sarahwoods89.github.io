@@ -102,21 +102,21 @@
   /* ─── QUIZ DATA ─────────────────────────────────────────────── */
   var QUIZ_QUESTIONS = [
     {
-      text: 'I\'ll ask you 3 quick questions to find your perfect print. First up — what speaks to you most?',
+      text: 'I\'ll ask you 3 quick questions to find your perfect print. First — what kind of art catches your eye?',
       options: [
-        { label: 'Wide open spaces and the natural world', value: 'nature' },
-        { label: 'Something bold and thought-provoking', value: 'abstract' },
-        { label: 'Colour, joy and feel-good energy', value: 'colour' },
-        { label: 'Words that actually mean something', value: 'words' }
+        { label: 'Abstract and emotional — art that makes you feel something', value: 'abstract' },
+        { label: 'Bold colours and joy — life is too short to be beige', value: 'colour' },
+        { label: 'Landscapes and the great outdoors', value: 'landscape' },
+        { label: 'Feminine and figure-led — prints with a story in them', value: 'feminine' }
       ]
     },
     {
-      text: 'Great taste! Where would this print go?',
+      text: 'If your walls could say one thing, they\'d say...',
       options: [
-        { label: 'Living room — it has to make a statement', value: 'statement' },
-        { label: 'Bedroom — calm and beautiful', value: 'calm' },
-        { label: 'Kitchen or hallway — bright and fun', value: 'fun' },
-        { label: 'Office — something to look at every day', value: 'office' }
+        { label: 'I have depth. I\'m a bit moody. I\'m not sorry.', value: 'moody' },
+        { label: 'I love colour. Life is bright.', value: 'colourful' },
+        { label: 'I\'m rooted in the land and proud of it.', value: 'rooted' },
+        { label: 'Home is personal. This print means something.', value: 'personal' }
       ]
     },
     {
@@ -124,7 +124,7 @@
       options: [
         { label: 'I\'m Irish and proud of it', value: 'irish' },
         { label: 'Irish at heart, wherever I am', value: 'irish_heart' },
-        { label: 'I love Ireland but I\'m not from there', value: 'loves_ireland' },
+        { label: 'I love Ireland but I\'m not from there', value: 'loves' },
         { label: 'No particular connection to Ireland', value: 'no_ireland' }
       ]
     }
@@ -133,56 +133,82 @@
   var QUIZ_PRINTS = {
     emeraldEire: {
       name: 'Emerald Eire',
-      desc: 'A limited edition print celebrating Ireland\'s wild, beautiful landscapes. Bold, striking, and unmistakably Irish.',
+      desc: 'Contemporary and patriotic. A limited edition print celebrating Ireland at its most striking and beautiful.',
       url: '/shop/ireland/emeraldEire.html',
       cta: 'View Emerald Eire'
     },
+    wicklowLumps: {
+      name: 'Wicklow Lumps',
+      desc: 'Earthy, grounded and quietly stunning. Wicklow Lumps captures the raw landscape of Ireland in a print that feels like home.',
+      url: '/shop/ireland/wicklowLumps.html',
+      cta: 'View Wicklow Lumps'
+    },
+    coisir: {
+      name: 'Cóisir',
+      desc: 'Moody, messy and unmistakably Irish. Cóisir is a bold abstract piece that carries the spirit of Ireland in every mark.',
+      url: '/shop/ireland/coisir.html',
+      cta: 'View Cóisir'
+    },
     wereFrom: {
       name: "We're From",
-      desc: 'A personalised print of Ireland — tell me where you\'re from, and I\'ll mark it on the map before it ships. A proper one-of-a-kind.',
+      desc: 'Feminine, personal and pop. A personalised print of Ireland — tell me where you\'re from and I\'ll mark it on the map before it ships.',
       url: '/shop/ireland/weAreFrom.html',
       cta: "View We're From"
     },
     slidingSouls: {
       name: 'Sliding Souls',
-      desc: 'A striking abstract print about those sliding doors moments in life. The kind of piece that makes you think every time you walk past it.',
+      desc: 'Ethereal and red. An abstract print about those sliding doors moments in life — the kind of piece that makes you stop and think.',
       url: '/shop/abstracts/slidingSouls.html',
       cta: 'View Sliding Souls'
     },
     sprinkles: {
       name: 'Sprinkles',
-      desc: 'A joyful, colourful print full of personality. Bright, fun, and impossible not to smile at.',
+      desc: 'Pop, fun and full of energy. Sprinkles brings colour and joy to any room — impossible not to smile at.',
       url: '/shop/ireland/sprinkles.html',
       cta: 'View Sprinkles'
     },
-    sarahWords: {
-      name: 'Sarah Words',
-      desc: 'Art that speaks. Sarah\'s words-based prints are for the ones who feel things deeply and like their walls to do the same.',
-      url: '/shop/sarahwords/',
-      cta: 'View Sarah Words'
+    onTheHill: {
+      name: 'On the Hill',
+      desc: 'Pop colours, florals and a whole lot of life. On the Hill brings the outdoors in with bold, beautiful energy.',
+      url: '/shop/florals/',
+      cta: 'View On the Hill'
+    },
+    bliss: {
+      name: 'Bliss',
+      desc: 'Fun, cheeky, feminine and classy — Bliss is the kind of print that works in any room and always gets a comment.',
+      url: '/shop/women/bliss.html',
+      cta: 'View Bliss'
+    },
+    leanBack: {
+      name: 'Lean Back',
+      desc: 'Feminine and Irish with a quiet confidence. Lean Back is a figure-led print full of story and personality.',
+      url: '/shop/women/leanBack.html',
+      cta: 'View Lean Back'
     }
   };
 
   function getQuizRecommendation(answers) {
-    var scores = { emeraldEire: 0, wereFrom: 0, slidingSouls: 0, sprinkles: 0, sarahWords: 0 };
+    var order = ['emeraldEire', 'wicklowLumps', 'coisir', 'wereFrom', 'slidingSouls', 'sprinkles', 'onTheHill', 'bliss', 'leanBack'];
+    var scores = {};
+    for (var i = 0; i < order.length; i++) { scores[order[i]] = 0; }
 
-    if (answers[0] === 'nature')   { scores.emeraldEire += 3; scores.sprinkles += 1; }
-    if (answers[0] === 'abstract') { scores.slidingSouls += 3; }
-    if (answers[0] === 'colour')   { scores.sprinkles += 3; }
-    if (answers[0] === 'words')    { scores.sarahWords += 3; }
+    if (answers[0] === 'abstract')  { scores.slidingSouls += 3; scores.coisir += 2; }
+    if (answers[0] === 'colour')    { scores.sprinkles += 2; scores.onTheHill += 2; scores.bliss += 2; }
+    if (answers[0] === 'landscape') { scores.wicklowLumps += 3; scores.emeraldEire += 2; }
+    if (answers[0] === 'feminine')  { scores.leanBack += 3; scores.bliss += 2; scores.wereFrom += 1; }
 
-    if (answers[1] === 'statement') { scores.emeraldEire += 2; scores.slidingSouls += 1; }
-    if (answers[1] === 'calm')      { scores.wereFrom += 2; scores.slidingSouls += 1; }
-    if (answers[1] === 'fun')       { scores.sprinkles += 2; }
-    if (answers[1] === 'office')    { scores.sarahWords += 2; scores.slidingSouls += 1; }
+    if (answers[1] === 'moody')     { scores.slidingSouls += 3; scores.coisir += 3; }
+    if (answers[1] === 'colourful') { scores.sprinkles += 2; scores.onTheHill += 2; scores.bliss += 1; }
+    if (answers[1] === 'rooted')    { scores.wicklowLumps += 3; scores.emeraldEire += 2; }
+    if (answers[1] === 'personal')  { scores.wereFrom += 3; scores.leanBack += 2; }
 
-    if (answers[2] === 'irish')        { scores.emeraldEire += 3; scores.wereFrom += 2; }
-    if (answers[2] === 'irish_heart')  { scores.wereFrom += 3; scores.emeraldEire += 1; }
-    if (answers[2] === 'loves_ireland'){ scores.wereFrom += 2; scores.emeraldEire += 1; }
+    if (answers[2] === 'irish')       { scores.emeraldEire += 3; scores.coisir += 2; scores.wicklowLumps += 1; }
+    if (answers[2] === 'irish_heart') { scores.wereFrom += 3; scores.emeraldEire += 1; }
+    if (answers[2] === 'loves')       { scores.wicklowLumps += 2; scores.wereFrom += 1; scores.emeraldEire += 1; }
 
-    var best = 'emeraldEire', bestScore = -1;
-    for (var key in scores) {
-      if (scores[key] > bestScore) { bestScore = scores[key]; best = key; }
+    var best = order[0], bestScore = -1;
+    for (var j = 0; j < order.length; j++) {
+      if (scores[order[j]] > bestScore) { bestScore = scores[order[j]]; best = order[j]; }
     }
     return QUIZ_PRINTS[best];
   }
