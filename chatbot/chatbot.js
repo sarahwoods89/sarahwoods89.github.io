@@ -34,7 +34,7 @@
     },
     {
       q: 'what sizes are available print size dimensions measurements how big how small',
-      a: 'Our smallest print is 10 x 10 inches, and our largest is A1, though A1 is only available for a small number of Emerald Eire prints. Sizes vary across collections, so the best place to check is each individual collection in the <a href="/shop/" style="color:inherit;font-weight:500">Shop</a>.',
+      a: 'Our smallest print is 10 x 10 inches, and our largest is A2. Sizes vary across collections, so the best place to check is each individual collection in the <a href="/shop/" style="color:inherit;font-weight:500">Shop</a>.',
       tags: ['size', 'sizes', 'dimension', 'measurement', 'large', 'small', 'format', 'cm', 'inch', 'a1', 'a2', 'a3', 'big']
     },
     {
