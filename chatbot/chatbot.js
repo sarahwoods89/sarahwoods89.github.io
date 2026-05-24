@@ -120,12 +120,12 @@
       ]
     },
     {
-      text: 'Last one! What\'s your connection to Ireland?',
+      text: 'Last one! What feeling do you want when you walk past your print every morning?',
       options: [
-        { label: 'I\'m Irish and proud of it', value: 'irish' },
-        { label: 'Irish at heart, wherever I am', value: 'irish_heart' },
-        { label: 'I love Ireland but I\'m not from there', value: 'loves' },
-        { label: 'No particular connection to Ireland', value: 'no_ireland' }
+        { label: 'Pride — in where I come from and who I am', value: 'pride' },
+        { label: 'Joy — an instant mood boost every single time', value: 'joy' },
+        { label: 'Calm — something grounding and real', value: 'calm' },
+        { label: 'Depth — something that makes me stop and think', value: 'depth' }
       ]
     }
   ];
@@ -202,10 +202,10 @@
     if (answers[1] === 'rooted')    { scores.wicklowLumps += 3; scores.emeraldEire += 2; }
     if (answers[1] === 'personal')  { scores.wereFrom += 3; scores.leanBack += 3; }
 
-    if (answers[2] === 'irish')       { scores.emeraldEire += 3; scores.coisir += 2; scores.wicklowLumps += 1; }
-    if (answers[2] === 'irish_heart') { scores.wereFrom += 3; scores.emeraldEire += 1; }
-    if (answers[2] === 'loves')       { scores.wicklowLumps += 2; scores.wereFrom += 1; scores.emeraldEire += 1; }
-    if (answers[2] === 'no_ireland')  { scores.wereFrom -= 3; scores.emeraldEire -= 2; }
+    if (answers[2] === 'pride') { scores.emeraldEire += 3; scores.coisir += 2; scores.wereFrom += 2; scores.wicklowLumps += 1; }
+    if (answers[2] === 'joy')   { scores.sprinkles += 2; scores.onTheHill += 2; scores.bliss += 2; }
+    if (answers[2] === 'calm')  { scores.wicklowLumps += 3; scores.wereFrom += 2; scores.slidingSouls += 1; }
+    if (answers[2] === 'depth') { scores.slidingSouls += 3; scores.coisir += 2; }
 
     var best = order[0], bestScore = -1;
     for (var j = 0; j < order.length; j++) {
