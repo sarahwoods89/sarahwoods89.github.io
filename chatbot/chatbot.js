@@ -130,6 +130,16 @@
     }
   ];
 
+  var QUIZ_Q4 = {
+    text: 'One more! What\'s your Ireland?',
+    options: [
+      { label: 'Wild coastlines, green hills, open skies', value: 'landscape' },
+      { label: 'A spot on the map that means the world to me', value: 'personal' },
+      { label: 'The culture, the craic, the energy', value: 'craic' },
+      { label: 'Ireland is in my blood — full stop', value: 'blood' }
+    ]
+  };
+
   var QUIZ_PRINTS = {
     emeraldEire: {
       name: 'Emerald Eire',
@@ -202,10 +212,15 @@
     if (answers[1] === 'rooted')    { scores.wicklowLumps += 3; scores.emeraldEire += 2; }
     if (answers[1] === 'personal')  { scores.wereFrom += 3; scores.leanBack += 3; }
 
-    if (answers[2] === 'pride') { scores.emeraldEire += 3; scores.coisir += 2; scores.wereFrom += 2; scores.wicklowLumps += 1; }
+    if (answers[2] === 'pride') { scores.emeraldEire += 2; scores.coisir += 1; scores.wereFrom += 1; scores.wicklowLumps += 1; }
     if (answers[2] === 'joy')   { scores.sprinkles += 2; scores.onTheHill += 2; scores.bliss += 2; }
     if (answers[2] === 'calm')  { scores.wicklowLumps += 3; scores.wereFrom += 2; scores.slidingSouls += 1; }
     if (answers[2] === 'depth') { scores.slidingSouls += 3; scores.coisir += 2; }
+
+    if (answers[3] === 'landscape') { scores.wicklowLumps += 3; scores.emeraldEire += 2; }
+    if (answers[3] === 'personal')  { scores.wereFrom += 4; }
+    if (answers[3] === 'craic')     { scores.coisir += 3; scores.sprinkles += 2; }
+    if (answers[3] === 'blood')     { scores.emeraldEire += 3; scores.coisir += 1; }
 
     var best = order[0], bestScore = -1;
     for (var j = 0; j < order.length; j++) {
@@ -382,7 +397,7 @@
     var dots = showDots();
     setTimeout(function () {
       dots.remove();
-      var q = QUIZ_QUESTIONS[stepIdx];
+      var q = stepIdx < QUIZ_QUESTIONS.length ? QUIZ_QUESTIONS[stepIdx] : QUIZ_Q4;
       var msgDiv = document.createElement('div');
       msgDiv.className = 'sw-msg sw-bot sw-quiz-q';
 
@@ -406,7 +421,10 @@
           quizAnswers.push(opt.value);
           addMsg(opt.label, 'user');
 
-          if (quizAnswers.length < QUIZ_QUESTIONS.length) {
+          var justAnswered = quizAnswers.length - 1;
+          if (justAnswered === 2 && quizAnswers[2] === 'pride') {
+            showQuizQuestion(3);
+          } else if (quizAnswers.length < QUIZ_QUESTIONS.length) {
             showQuizQuestion(quizAnswers.length);
           } else {
             showQuizResult();
