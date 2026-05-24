@@ -200,11 +200,12 @@
     if (answers[1] === 'moody')     { scores.slidingSouls += 3; scores.coisir += 3; }
     if (answers[1] === 'colourful') { scores.sprinkles += 2; scores.onTheHill += 2; scores.bliss += 1; }
     if (answers[1] === 'rooted')    { scores.wicklowLumps += 3; scores.emeraldEire += 2; }
-    if (answers[1] === 'personal')  { scores.wereFrom += 3; scores.leanBack += 2; }
+    if (answers[1] === 'personal')  { scores.wereFrom += 3; scores.leanBack += 3; }
 
     if (answers[2] === 'irish')       { scores.emeraldEire += 3; scores.coisir += 2; scores.wicklowLumps += 1; }
     if (answers[2] === 'irish_heart') { scores.wereFrom += 3; scores.emeraldEire += 1; }
     if (answers[2] === 'loves')       { scores.wicklowLumps += 2; scores.wereFrom += 1; scores.emeraldEire += 1; }
+    if (answers[2] === 'no_ireland')  { scores.wereFrom -= 3; scores.emeraldEire -= 2; }
 
     var best = order[0], bestScore = -1;
     for (var j = 0; j < order.length; j++) {
