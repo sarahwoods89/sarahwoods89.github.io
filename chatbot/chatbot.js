@@ -24,7 +24,7 @@
     },
     {
       q: 'return policy can I return my order refund exchange damaged wrong',
-      a: 'We don\'t accept returns for change of mind, but if your print arrives damaged or there\'s an issue with your order, get in touch within 14 days and we\'ll make it right. Email us at <a href="mailto:hello@sarahwoods.xyz" style="color:inherit;font-weight:500">hello@sarahwoods.xyz</a> with a photo and your order details.',
+      a: 'We don\'t accept returns for change of mind, but if your print arrives damaged or there\'s an issue with your order, get in touch within 14 days and we\'ll make it right. Email us at <a href="mailto:sarahwoodsartist@gmail.com" style="color:inherit;font-weight:500">sarahwoodsartist@gmail.com</a> with a photo and your order details.',
       tags: ['return', 'refund', 'exchange', 'damaged', 'policy', 'wrong', 'broken', 'fault', 'change of mind']
     },
     {
@@ -92,12 +92,100 @@
   var SUGGESTIONS = [
     'Do you ship worldwide?',
     'What sizes are available?',
-    'Are prints limited edition?',
-    'What\'s your return policy?'
+    'What\'s your return policy?',
+    'Find my perfect print'
   ];
 
   var GREETING = 'Hi! I\'m Sarah\'s virtual assistant. Ask me anything about prints, shipping, or orders, or tap a question below to get started.';
   var FALLBACK  = 'I\'m not sure about that one! For anything I can\'t answer, you can reach Sarah directly at <a href="mailto:sarahwoodsartist@gmail.com" style="color:inherit;font-weight:500">sarahwoodsartist@gmail.com</a> or via the <a href="/contact/" style="color:inherit;font-weight:500">Contact page</a>.';
+
+  /* ─── QUIZ DATA ─────────────────────────────────────────────── */
+  var QUIZ_QUESTIONS = [
+    {
+      text: 'I\'ll ask you 3 quick questions to find your perfect print. First up — what speaks to you most?',
+      options: [
+        { label: 'Wide open spaces and the natural world', value: 'nature' },
+        { label: 'Something bold and thought-provoking', value: 'abstract' },
+        { label: 'Colour, joy and feel-good energy', value: 'colour' },
+        { label: 'Words that actually mean something', value: 'words' }
+      ]
+    },
+    {
+      text: 'Great taste! Where would this print go?',
+      options: [
+        { label: 'Living room — it has to make a statement', value: 'statement' },
+        { label: 'Bedroom — calm and beautiful', value: 'calm' },
+        { label: 'Kitchen or hallway — bright and fun', value: 'fun' },
+        { label: 'Office — something to look at every day', value: 'office' }
+      ]
+    },
+    {
+      text: 'Last one! What\'s your connection to Ireland?',
+      options: [
+        { label: 'I\'m Irish and proud of it', value: 'irish' },
+        { label: 'Irish at heart, wherever I am', value: 'irish_heart' },
+        { label: 'I love Ireland but I\'m not from there', value: 'loves_ireland' },
+        { label: 'No particular connection to Ireland', value: 'no_ireland' }
+      ]
+    }
+  ];
+
+  var QUIZ_PRINTS = {
+    emeraldEire: {
+      name: 'Emerald Eire',
+      desc: 'A limited edition print celebrating Ireland\'s wild, beautiful landscapes. Bold, striking, and unmistakably Irish.',
+      url: '/shop/ireland/emeraldEire.html',
+      cta: 'View Emerald Eire'
+    },
+    wereFrom: {
+      name: "We're From",
+      desc: 'A personalised print of Ireland — tell me where you\'re from, and I\'ll mark it on the map before it ships. A proper one-of-a-kind.',
+      url: '/shop/ireland/weAreFrom.html',
+      cta: "View We're From"
+    },
+    slidingSouls: {
+      name: 'Sliding Souls',
+      desc: 'A striking abstract print about those sliding doors moments in life. The kind of piece that makes you think every time you walk past it.',
+      url: '/shop/abstracts/slidingSouls.html',
+      cta: 'View Sliding Souls'
+    },
+    sprinkles: {
+      name: 'Sprinkles',
+      desc: 'A joyful, colourful print full of personality. Bright, fun, and impossible not to smile at.',
+      url: '/shop/ireland/sprinkles.html',
+      cta: 'View Sprinkles'
+    },
+    sarahWords: {
+      name: 'Sarah Words',
+      desc: 'Art that speaks. Sarah\'s words-based prints are for the ones who feel things deeply and like their walls to do the same.',
+      url: '/shop/sarahwords/',
+      cta: 'View Sarah Words'
+    }
+  };
+
+  function getQuizRecommendation(answers) {
+    var scores = { emeraldEire: 0, wereFrom: 0, slidingSouls: 0, sprinkles: 0, sarahWords: 0 };
+
+    if (answers[0] === 'nature')   { scores.emeraldEire += 3; scores.sprinkles += 1; }
+    if (answers[0] === 'abstract') { scores.slidingSouls += 3; }
+    if (answers[0] === 'colour')   { scores.sprinkles += 3; }
+    if (answers[0] === 'words')    { scores.sarahWords += 3; }
+
+    if (answers[1] === 'statement') { scores.emeraldEire += 2; scores.slidingSouls += 1; }
+    if (answers[1] === 'calm')      { scores.wereFrom += 2; scores.slidingSouls += 1; }
+    if (answers[1] === 'fun')       { scores.sprinkles += 2; }
+    if (answers[1] === 'office')    { scores.sarahWords += 2; scores.slidingSouls += 1; }
+
+    if (answers[2] === 'irish')        { scores.emeraldEire += 3; scores.wereFrom += 2; }
+    if (answers[2] === 'irish_heart')  { scores.wereFrom += 3; scores.emeraldEire += 1; }
+    if (answers[2] === 'loves_ireland'){ scores.wereFrom += 2; scores.emeraldEire += 1; }
+
+    var best = 'emeraldEire', bestScore = -1;
+    for (var key in scores) {
+      if (scores[key] > bestScore) { bestScore = scores[key]; best = key; }
+    }
+    return QUIZ_PRINTS[best];
+  }
 
   /* ─── FAQ MATCHING ─────────────────────────────────────────── */
   var STOP = { a:1,an:1,the:1,is:1,are:1,do:1,does:1,can:1,i:1,my:1,how:1,what:1,when:1,where:1,why:1,will:1,would:1,please:1,help:1,me:1,you:1,your:1,it:1,this:1,that:1,to:1,for:1,of:1,on:1,in:1,at:1,by:1,with:1,from:1,have:1,has:1,had:1,be:1,been:1,was:1,were:1,am:1,get:1,got:1,about:1,some:1,any:1,all:1,just:1,and:1,or:1,not:1 };
@@ -108,6 +196,11 @@
 
   function tokens(s) {
     return norm(s).split(' ').filter(function(w) { return w.length > 2 && !STOP[w]; });
+  }
+
+  function isQuizTrigger(input) {
+    var n = norm(input);
+    return /find|quiz|recommend|which print|not sure|help me choose|suggest|perfect print/.test(n);
   }
 
   function findAnswer(input) {
@@ -163,6 +256,8 @@
     '#sw-sugg{padding:4px 14px 12px;display:flex;flex-wrap:wrap;gap:6px;flex-shrink:0}',
     '.sw-sq{background:#fff;border:1px solid #ddd;border-radius:20px;padding:5px 12px;font-size:.76rem;cursor:pointer;font-family:"Helvetica Neue",Arial,sans-serif;color:#444;transition:background .15s,color .15s,border-color .15s;white-space:nowrap}',
     '.sw-sq:hover{background:#111;color:#fff;border-color:#111}',
+    '.sw-sq.sw-quiz-pill{border-color:#111;color:#111;font-weight:500}',
+    '.sw-sq.sw-quiz-pill:hover{background:#111;color:#fff}',
     '#sw-irow{padding:12px 14px;border-top:1px solid #eee;display:flex;gap:8px;flex-shrink:0;background:#fff}',
     '#sw-input{flex:1;border:1px solid #e0e0e0;border-radius:10px;padding:9px 13px;font-size:.85rem;font-family:"Helvetica Neue",Arial,sans-serif;outline:none;background:#fafafa;color:#222;transition:border-color .15s}',
     '#sw-input:focus{border-color:#999;background:#fff}',
@@ -180,6 +275,20 @@
     '.sw-followup a:hover{color:#555}',
     'html.dark-mode .sw-followup,.sw-followup a{color:#666}',
     'html.dark-mode .sw-followup a:hover{color:#999}',
+    '.sw-quiz-q{max-width:100%;width:100%;box-sizing:border-box}',
+    '.sw-quiz-opt{display:block;width:100%;text-align:left;background:#fff;border:1px solid #ddd;border-radius:10px;padding:9px 12px;font-size:.82rem;cursor:pointer;font-family:"Helvetica Neue",Arial,sans-serif;color:#333;margin-top:7px;transition:background .15s,color .15s,border-color .15s;line-height:1.4}',
+    '.sw-quiz-opt:first-of-type{margin-top:10px}',
+    '.sw-quiz-opt:hover:not(:disabled){background:#111;color:#fff;border-color:#111}',
+    '.sw-quiz-opt:disabled{cursor:default}',
+    '.sw-quiz-opt.sw-quiz-selected{background:#111;color:#fff;border-color:#111;opacity:1!important}',
+    'html.dark-mode .sw-quiz-opt{background:#2a2a2a;border-color:#3a3a3a;color:#bbb}',
+    'html.dark-mode .sw-quiz-opt:hover:not(:disabled){background:#f0f0f0;color:#111;border-color:#f0f0f0}',
+    'html.dark-mode .sw-quiz-opt.sw-quiz-selected{background:#f0f0f0;color:#111;border-color:#f0f0f0}',
+    '.sw-quiz-result{max-width:100%;width:100%;box-sizing:border-box}',
+    '.sw-quiz-result-name{font-size:1rem;font-weight:600;margin:0 0 6px;font-family:"Helvetica Neue",Arial,sans-serif}',
+    '.sw-quiz-result-desc{font-size:.82rem;line-height:1.6;color:#555;margin:0 0 14px;font-family:"Helvetica Neue",Arial,sans-serif}',
+    '.sw-quiz-result-btn{display:inline-block;background:#111;color:#fff;padding:9px 18px;border-radius:10px;text-decoration:none;font-size:.82rem;font-family:"Helvetica Neue",Arial,sans-serif;transition:background .15s}',
+    '.sw-quiz-result-btn:hover{background:#333;color:#fff}',
     '@media(max-width:420px){#sw-win{width:calc(100vw - 20px);right:10px;bottom:82px}#sw-bubble{bottom:16px;right:16px}}'
   ].join('');
   document.head.appendChild(styleEl);
@@ -220,24 +329,131 @@
   var isOpen   = false;
   var greeted  = false;
 
+  var quizActive  = false;
+  var quizAnswers = [];
+
   function addMsg(text, type) {
     var m = document.createElement('div');
     m.className = 'sw-msg sw-' + type;
     m.innerHTML = text;
     msgsEl.appendChild(m);
     msgsEl.scrollTop = msgsEl.scrollHeight;
+    return m;
   }
 
-  function respond(question) {
-    addMsg(question, 'user');
-    suggEl.style.display = 'none';
-
+  function showDots() {
     var dots = document.createElement('div');
     dots.className = 'sw-dots';
     dots.textContent = '···';
     msgsEl.appendChild(dots);
     msgsEl.scrollTop = msgsEl.scrollHeight;
+    return dots;
+  }
 
+  /* ─── QUIZ FUNCTIONS ───────────────────────────────────────── */
+  function showQuizQuestion(stepIdx) {
+    var dots = showDots();
+    setTimeout(function () {
+      dots.remove();
+      var q = QUIZ_QUESTIONS[stepIdx];
+      var msgDiv = document.createElement('div');
+      msgDiv.className = 'sw-msg sw-bot sw-quiz-q';
+
+      var pEl = document.createElement('p');
+      pEl.style.cssText = 'margin:0;font-family:"Helvetica Neue",Arial,sans-serif;font-size:.85rem;line-height:1.65;';
+      pEl.textContent = q.text;
+      msgDiv.appendChild(pEl);
+
+      q.options.forEach(function (opt) {
+        var btn = document.createElement('button');
+        btn.className = 'sw-quiz-opt';
+        btn.textContent = opt.label;
+        btn.addEventListener('click', function () {
+          msgDiv.querySelectorAll('.sw-quiz-opt').forEach(function (b) {
+            b.disabled = true;
+            b.style.opacity = '0.38';
+          });
+          btn.classList.add('sw-quiz-selected');
+          btn.style.opacity = '1';
+
+          quizAnswers.push(opt.value);
+          addMsg(opt.label, 'user');
+
+          if (quizAnswers.length < QUIZ_QUESTIONS.length) {
+            showQuizQuestion(quizAnswers.length);
+          } else {
+            showQuizResult();
+          }
+        });
+        msgDiv.appendChild(btn);
+      });
+
+      msgsEl.appendChild(msgDiv);
+      msgsEl.scrollTop = msgsEl.scrollHeight;
+    }, 700);
+  }
+
+  function showQuizResult() {
+    var dots = showDots();
+    setTimeout(function () {
+      dots.remove();
+      var print = getQuizRecommendation(quizAnswers);
+
+      var resultDiv = document.createElement('div');
+      resultDiv.className = 'sw-msg sw-bot sw-quiz-result';
+
+      var intro = document.createElement('p');
+      intro.style.cssText = 'margin:0 0 10px;font-family:"Helvetica Neue",Arial,sans-serif;font-size:.85rem;line-height:1.65;';
+      intro.textContent = 'Based on your answers, your perfect print is...';
+      resultDiv.appendChild(intro);
+
+      var name = document.createElement('p');
+      name.className = 'sw-quiz-result-name';
+      name.textContent = print.name;
+      resultDiv.appendChild(name);
+
+      var desc = document.createElement('p');
+      desc.className = 'sw-quiz-result-desc';
+      desc.textContent = print.desc;
+      resultDiv.appendChild(desc);
+
+      var link = document.createElement('a');
+      link.className = 'sw-quiz-result-btn';
+      link.href = print.url;
+      link.textContent = print.cta + ' →';
+      resultDiv.appendChild(link);
+
+      msgsEl.appendChild(resultDiv);
+
+      var followUp = document.createElement('div');
+      followUp.className = 'sw-followup';
+      followUp.innerHTML = 'Want to browse everything? Visit the <a href="/shop/">full Shop</a>.';
+      msgsEl.appendChild(followUp);
+
+      msgsEl.scrollTop = msgsEl.scrollHeight;
+      quizActive = false;
+      quizAnswers = [];
+    }, 900);
+  }
+
+  function startQuiz() {
+    quizActive = true;
+    quizAnswers = [];
+    suggEl.style.display = 'none';
+    showQuizQuestion(0);
+  }
+
+  /* ─── FAQ RESPOND ──────────────────────────────────────────── */
+  function respond(question) {
+    addMsg(question, 'user');
+    suggEl.style.display = 'none';
+
+    if (isQuizTrigger(question)) {
+      startQuiz();
+      return;
+    }
+
+    var dots = showDots();
     setTimeout(function () {
       dots.remove();
       addMsg(findAnswer(question) || FALLBACK, 'bot');
@@ -261,9 +477,17 @@
       for (var i = 0; i < SUGGESTIONS.length; i++) {
         (function (q) {
           var btn = document.createElement('button');
-          btn.className = 'sw-sq';
+          btn.className = q === 'Find my perfect print' ? 'sw-sq sw-quiz-pill' : 'sw-sq';
           btn.textContent = q;
-          btn.addEventListener('click', function () { respond(q); });
+          btn.addEventListener('click', function () {
+            if (q === 'Find my perfect print') {
+              addMsg(q, 'user');
+              suggEl.style.display = 'none';
+              startQuiz();
+            } else {
+              respond(q);
+            }
+          });
           suggEl.appendChild(btn);
         })(SUGGESTIONS[i]);
       }
