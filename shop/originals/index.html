@@ -24,15 +24,105 @@
       box-sizing: border-box;
     }
 
-    .coming-soon {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
+    .art-card a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .art-card {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .art-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .art-card-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      aspect-ratio: 1;
+      background: #f2f2f2;
+    }
+
+    .art-card-image img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .art-card-image img.active {
+      opacity: 1;
+    }
+
+    .art-card-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(255, 255, 255, 0.88);
+      padding: 12px;
       text-align: center;
       font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .art-card:hover .art-card-overlay {
+      opacity: 1;
+    }
+
+    .art-card-body {
+      padding: 14px 2px 0;
+      text-align: left;
+    }
+
+    .art-card-body h5 {
+      font-family: 'Helvetica Neue', sans-serif;
       font-size: 0.95rem;
+      font-weight: 500;
+      margin: 0 0 4px;
+      color: #222;
+    }
+
+    .art-card-body p {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.85rem;
       color: #999;
-      line-height: 1.8;
+      margin: 0;
+    }
+
+    .image-dots {
+      position: absolute;
+      bottom: 44px;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .art-card:hover .image-dots {
+      opacity: 1;
+    }
+
+    .image-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.3);
+      transition: background 0.3s ease;
+    }
+
+    .image-dot.active {
+      background: #222;
     }
 
     @media (max-width: 768px) {
@@ -51,11 +141,79 @@
   <a href="/shop/" class="back-link">← Back to Shop</a>
   <h1>Originals</h1>
 
-  <div class="coming-soon">
-    <p>Original paintings available soon.</p>
+  <div class="collection-grid">
+
+    <!-- Bliss -->
+    <div class="art-card">
+      <a href="bliss.html">
+        <div class="art-card-image">
+          <img src="../images/women/bliss.webp" class="active" alt="Bliss">
+          <img src="../images/women/blissRoom1.webp" alt="Bliss in room">
+          <div class="image-dots">
+            <div class="image-dot active"></div>
+            <div class="image-dot"></div>
+          </div>
+          <div class="art-card-overlay">View Details →</div>
+        </div>
+        <div class="art-card-body">
+          <h5>Bliss</h5>
+          <p>€890 — Oil on canvas board, 20 × 20"</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Break -->
+    <div class="art-card">
+      <a href="break.html">
+        <div class="art-card-image">
+          <img src="../images/women/break.webp" class="active" alt="Break">
+          <img src="../images/women/breakRoom1.webp" alt="Break in room 1">
+          <img src="../images/women/breakRoom2.webp" alt="Break in room 2">
+          <div class="image-dots">
+            <div class="image-dot active"></div>
+            <div class="image-dot"></div>
+            <div class="image-dot"></div>
+          </div>
+          <div class="art-card-overlay">View Details →</div>
+        </div>
+        <div class="art-card-body">
+          <h5>Break</h5>
+          <p>€1,150 — Oil on deep edge canvas, 20 × 20"</p>
+        </div>
+      </a>
+    </div>
+
   </div>
 
   <div id="site-footer"></div>
+
+  <script>
+    document.querySelectorAll('.art-card-image').forEach(function (stack) {
+      const imgs = stack.querySelectorAll('img');
+      const dots = stack.querySelectorAll('.image-dot');
+      if (imgs.length <= 1) return;
+
+      let timer = null;
+      let current = 0;
+
+      function goTo(index) {
+        imgs[current].classList.remove('active');
+        if (dots[current]) dots[current].classList.remove('active');
+        current = index % imgs.length;
+        imgs[current].classList.add('active');
+        if (dots[current]) dots[current].classList.add('active');
+      }
+
+      stack.addEventListener('mouseenter', function () {
+        timer = setInterval(function () { goTo(current + 1); }, 900);
+      });
+
+      stack.addEventListener('mouseleave', function () {
+        clearInterval(timer);
+        goTo(0);
+      });
+    });
+  </script>
 
   <script src="/sarahWoodsStyle/include.js"></script>
 </body>
