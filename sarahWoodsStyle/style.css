@@ -663,6 +663,30 @@ text-align : justify;
   color: #2102d1 !important;
 }
 
+.dropdown-label {
+  display: block;
+  padding: 8px 20px 4px;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #aaa;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.dropdown-label-divider {
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+html.dark-mode .dropdown-label {
+  color: #777;
+}
+
+html.dark-mode .dropdown-label-divider {
+  border-top: 1px solid #333;
+}
+
 html.dark-mode .dropdown {
   background: #1a1a1a;
   border-color: #333;
