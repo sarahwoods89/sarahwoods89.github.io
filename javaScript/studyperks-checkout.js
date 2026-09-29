@@ -66,7 +66,7 @@
   try {
     const widget = window.StudyPerks.mount('#studyperks-checkout', {
       clientId,
-      label: 'Verify with StudyPerks — test checkout',
+      label: 'Verify & open checkout',
       onComplete: checkout,
       onError() {
         status.textContent = 'Verification was not completed. Please try again.';
