@@ -28,8 +28,18 @@
         signal: AbortSignal.timeout(30000),
         body: JSON.stringify({ clientId, origin: window.location.origin, proof: result.proof })
       });
-      if (!response.ok) throw new Error('Checkout request failed');
-      const data = await response.json();
+      let data;
+      try {
+        data = await response.json();
+      } catch (_) {
+        throw new Error('The checkout service returned an unreadable response.');
+      }
+      if (!response.ok) {
+        throw new Error(typeof data.error === 'string'
+          ? data.error
+          : 'The checkout service returned HTTP ' + response.status + '.');
+      }
+      if (!data.url) throw new Error('The checkout service did not return a payment link.');
       // The Worker must return { url } only after server-side offer validation.
       const url = new URL(data.url);
       if (url.origin !== 'https://checkout.stripe.com' || url.username || url.password) {
@@ -37,7 +47,12 @@
       }
       window.location.assign(url.href);
     } catch (error) {
-      status.textContent = 'Test checkout could not be started. Please verify again to retry.';
+      const message = error.name === 'TimeoutError'
+        ? 'The checkout service took too long to respond.'
+        : error instanceof TypeError
+          ? 'Could not reach the checkout service. Check your connection or the Worker CORS settings.'
+          : error.message || 'An unexpected error occurred.';
+      status.textContent = 'Checkout could not open: ' + message;
     } finally {
       pending = false;
     }
@@ -49,7 +64,7 @@
   }
 
   try {
-    window.StudyPerks.mount('#studyperks-checkout', {
+    const widget = window.StudyPerks.mount('#studyperks-checkout', {
       clientId,
       label: 'Verify with StudyPerks — test checkout',
       onComplete: checkout,
@@ -57,7 +72,18 @@
         status.textContent = 'Verification was not completed. Please try again.';
       }
     });
-    status.textContent = 'Stripe test mode. No real purchase will be made.';
+    const mark = widget?.root?.querySelector('.sp-mark');
+    if (mark) {
+      const logo = document.createElement('img');
+      logo.src = '/images/logo/studyperks-logo-black-lime.png';
+      logo.alt = '';
+      logo.width = 27;
+      logo.height = 27;
+      logo.style.objectFit = 'contain';
+      mark.replaceChildren(logo);
+      mark.style.background = 'transparent';
+    }
+    status.textContent = '';
   } catch (error) {
     status.textContent = 'StudyPerks verification is currently unavailable. Please try again later.';
   }
