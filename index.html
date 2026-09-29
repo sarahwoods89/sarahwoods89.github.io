@@ -292,12 +292,12 @@
     </div>
   </section>
 
-  <!-- StudyPerks verification demo -->
+  <!-- StudyPerks test checkout -->
   <section class="page-section" aria-labelledby="studyperks-heading" style="text-align: center;">
     <h2 id="studyperks-heading" class="section-heading">StudyPerks</h2>
-    <p>Check your StudyPerks pass. This demo does not apply a shop discount.</p>
-    <div id="studyperks-verification"></div>
-    <p id="studyperks-status" role="status">Loading StudyPerks verification...</p>
+    <p>Verify your StudyPerks pass to try 10% off a test artwork in Stripe test checkout. No real purchase will be made.</p>
+    <div id="studyperks-checkout"></div>
+    <p id="studyperks-checkout-status" role="status">Loading StudyPerks verification...</p>
     <noscript>Enable JavaScript to verify with StudyPerks.</noscript>
   </section>
 
@@ -418,24 +418,7 @@
   </script>
 
   <script src="https://www.studyperks.me/SDK/studyperks-connect.js"></script>
-  <script>
-    (function () {
-      const status = document.getElementById('studyperks-status');
-      try {
-        StudyPerks.mount('#studyperks-verification', {
-          clientId: 'sarahwoods-xyz',
-          label: 'Verify with StudyPerks',
-          onComplete(result) {
-            console.log('StudyPerks verification:', result);
-            status.textContent = 'Verification finished. See the StudyPerks window for your result.';
-          }
-        });
-        status.textContent = '';
-      } catch (error) {
-        status.textContent = 'StudyPerks verification is currently unavailable. Please try again later.';
-      }
-    })();
-  </script>
+  <script src="/javaScript/studyperks-checkout.js"></script>
   <script src="/sarahWoodsStyle/include.js"></script>
 </body>
 </html>
