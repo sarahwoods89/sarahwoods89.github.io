@@ -13,12 +13,12 @@
   async function checkout(result) {
     if (pending) return;
     if (!result || result.eligible !== true || typeof result.proof !== 'string' || !result.proof.trim()) {
-      status.textContent = 'An active StudyPerks pass is required for this test checkout.';
+      status.textContent = 'An active StudyPerks pass is required to claim your student discount.';
       return;
     }
 
     pending = true;
-    status.textContent = 'Confirming your offer and opening Stripe test checkout...';
+    status.textContent = 'Confirming your student discount and opening checkout...';
     try {
       const response = await fetch(workerUrl, {
         method: 'POST',
@@ -59,14 +59,14 @@
   }
 
   if (window.location.origin !== approvedOrigin) {
-    status.textContent = 'Open https://www.sarahwoods.xyz to use this test checkout.';
+    status.textContent = 'Open https://www.sarahwoods.xyz to claim your student discount.';
     return;
   }
 
   try {
     const widget = window.StudyPerks.mount('#studyperks-checkout', {
       clientId,
-      label: 'Verify & open checkout',
+      label: 'Claim student discount',
       onComplete: checkout,
       onError() {
         status.textContent = 'Verification was not completed. Please try again.';
@@ -75,7 +75,7 @@
     const mark = widget?.root?.querySelector('.sp-mark');
     if (mark) {
       const logo = document.createElement('img');
-      logo.src = '/images/logo/studyperks-logo-black-lime.png';
+      logo.src = '/shop/images/digital-downloads/studyPerksLogo.png';
       logo.alt = '';
       logo.width = 27;
       logo.height = 27;
